@@ -1,7 +1,4 @@
-package Server;
-
-import Bank.Bank;
-import Bank.BankServer;
+package Bank;
 
 import java.rmi.Naming;
 

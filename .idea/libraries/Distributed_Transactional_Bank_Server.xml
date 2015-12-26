@@ -3,6 +3,7 @@
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/derby-10.5.3.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/zmq.jar!/" />
+      <root url="jar://$PROJECT_DIR$/junit.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
