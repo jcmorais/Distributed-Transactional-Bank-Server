@@ -81,7 +81,7 @@ public class Bank extends UnicastRemoteObject implements RemoteBank {
     public Double getAccountBalance(String idAccount) throws RemoteException {
         try {
             RemoteBankServer bank = (RemoteBankServer) Naming.lookup("//localhost/myBank" + idAccount.substring(0, 3));
-            bank.getAccountBalance(idAccount);
+            return bank.getAccountBalance(idAccount);
         } catch (NotBoundException e) {
             e.printStackTrace();
         } catch (MalformedURLException e) {
