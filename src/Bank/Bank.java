@@ -16,22 +16,24 @@ public class Bank extends UnicastRemoteObject implements RemoteBank {
     }
 
     @Override
-    public void transfer(int xid, String idSource, String idDestiny, double amount) throws RemoteException {
+    public void transfer(int xid, String idSource, String idDestiny, double amount) {
         //Vale a pena ter Threads para as transferencias???
         //e ter um maps dos servers? nao funciona se um reiniciar?
-        
-        try {
-            RemoteBankServer bankS = (RemoteBankServer) Naming.lookup("//localhost/myBank"+idSource.substring(0,3));
-            RemoteBankServer bankD = (RemoteBankServer) Naming.lookup("//localhost/myBank"+idDestiny.substring(0,3));
+        new Thread(() -> {
+            try {
+                RemoteBankServer bankS = (RemoteBankServer) Naming.lookup("//localhost/myBank"+idSource.substring(0,3));
+                RemoteBankServer bankD = (RemoteBankServer) Naming.lookup("//localhost/myBank"+idDestiny.substring(0,3));
 
-            bankS.withdraw(xid, idSource, amount);
-            bankD.deposit(xid, idDestiny, amount);
-
-        } catch (NotBoundException e) {
-            e.printStackTrace();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
+                bankS.withdraw(xid, idSource, amount);
+                bankD.deposit(xid, idDestiny, amount);
+            } catch (NotBoundException e) {
+                e.printStackTrace();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }).start();
     }
 
     @Override

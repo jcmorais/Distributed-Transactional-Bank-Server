@@ -43,12 +43,13 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/cb1.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/cb1.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/cf0.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/cf0.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Bank/Bank.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Bank/Bank.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Bank/RemoteBank.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Bank/RemoteBank.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Client/Client.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Client/Client.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Tests/TransferTest1.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Tests/TransferTest1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/derby.log" afterPath="$PROJECT_DIR$/derby.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Bank/Bank.java" afterPath="$PROJECT_DIR$/src/Bank/Bank.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Bank/RemoteBank.java" afterPath="$PROJECT_DIR$/src/Bank/RemoteBank.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Client/Client.java" afterPath="$PROJECT_DIR$/src/Client/Client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Tests/TransferTest1.java" afterPath="$PROJECT_DIR$/src/Tests/TransferTest1.java" />
     </list>
     <ignored path="Distributed-Transactional-Bank-Server.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -103,8 +104,8 @@
       <file leaf-file-name="Bank.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Bank/Bank.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.18701299">
-              <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.626943">
+              <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -134,7 +135,7 @@
         <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+              <caret line="21" column="128" selection-start-line="21" selection-start-column="128" selection-end-line="21" selection-end-column="128" />
               <folding />
             </state>
           </provider>
@@ -176,8 +177,8 @@
         <option value="$PROJECT_DIR$/src/Bank/Server.java" />
         <option value="$PROJECT_DIR$/src/Bank/BankServer.java" />
         <option value="$PROJECT_DIR$/src/Bank/RemoteBank.java" />
-        <option value="$PROJECT_DIR$/src/Client/Client.java" />
         <option value="$PROJECT_DIR$/src/Tests/TransferTest1.java" />
+        <option value="$PROJECT_DIR$/src/Client/Client.java" />
         <option value="$PROJECT_DIR$/src/Bank/Bank.java" />
       </list>
     </option>
@@ -715,7 +716,13 @@
       <option name="project" value="LOCAL" />
       <updated>1451424059599</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Corrigidos nomes de algumas variaveis">
+      <created>1451430036205</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1451430036205</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -761,16 +768,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="66" y="52" width="1300" height="716" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279483" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866043" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279483" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3279483" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19059011" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -802,19 +809,20 @@
     <MESSAGE value="Criado interpretador de comandos" />
     <MESSAGE value="Criado pequeno interpretador de comandos" />
     <MESSAGE value="Atualizado  interpretador de comandos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Atualizado  interpretador de comandos" />
+    <MESSAGE value="Corrigidos nomes de algumas variaveis" />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrigidos nomes de algumas variaveis" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Bank/Bank.java</url>
-          <line>83</line>
+          <line>85</line>
           <properties />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Bank/Bank.java</url>
-          <line>84</line>
+          <line>86</line>
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
@@ -1102,14 +1110,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Tests/TransferTest1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1118,10 +1118,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="128" selection-start-line="21" selection-start-column="128" selection-end-line="21" selection-end-column="128" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Bank/Bank.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18701299">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.626943">
+          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
           <folding />
         </state>
       </provider>

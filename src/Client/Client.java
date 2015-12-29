@@ -19,7 +19,7 @@ public class Client {
         System.out.println(bank.listAllAccounts());
 
         while(!end) {
-            System.out.println("1 - Nova Transferência\n2 - Sair");
+            System.out.println("------------------------------\n1 - Nova Transferência\n2 - Sair\n------------------------------");
             opt = scanner.nextLine();
             System.out.println(opt);
             switch(opt) {
