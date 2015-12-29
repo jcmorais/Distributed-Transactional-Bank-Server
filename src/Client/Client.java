@@ -32,7 +32,7 @@ public class Client {
                     double quantia = Double.parseDouble(scanner.nextLine());
 
                     int xid = channelMonitor.begin();
-                    bank.tranfer(xid, conta1, conta2, quantia);
+                    bank.transfer(xid, conta1, conta2, quantia);
                     boolean res = channelMonitor.commit(xid);
                     if (res) System.out.println("Transferência bem-sucedida.");
                     else System.out.println("Transferência mal-sucedida.");

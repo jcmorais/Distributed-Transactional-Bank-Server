@@ -16,16 +16,17 @@ public class Bank extends UnicastRemoteObject implements RemoteBank {
     }
 
     @Override
-    public void tranfer(int xid, String idSource, String idDesteny, double amount) throws RemoteException {
+    public void transfer(int xid, String idSource, String idDestiny, double amount) throws RemoteException {
         //Vale a pena ter Threads para as transferencias???
         //e ter um maps dos servers? nao funciona se um reiniciar?
-
+        
         try {
             RemoteBankServer bankS = (RemoteBankServer) Naming.lookup("//localhost/myBank"+idSource.substring(0,3));
-            RemoteBankServer bankD = (RemoteBankServer) Naming.lookup("//localhost/myBank"+idDesteny.substring(0,3));
+            RemoteBankServer bankD = (RemoteBankServer) Naming.lookup("//localhost/myBank"+idDestiny.substring(0,3));
 
             bankS.withdraw(xid, idSource, amount);
-            bankD.deposit(xid, idDesteny, amount);
+            bankD.deposit(xid, idDestiny, amount);
+
         } catch (NotBoundException e) {
             e.printStackTrace();
         } catch (MalformedURLException e) {
@@ -34,10 +35,10 @@ public class Bank extends UnicastRemoteObject implements RemoteBank {
     }
 
     @Override
-    public void deposit(int xid, String idAccount, double amout) throws RemoteException {
+    public void deposit(int xid, String idAccount, double amount) throws RemoteException {
         try {
             RemoteBankServer bank = (RemoteBankServer) Naming.lookup("//localhost/myBank" + idAccount.substring(0, 3));
-            bank.deposit(xid, idAccount, amout);
+            bank.deposit(xid, idAccount, amount);
         } catch (NotBoundException e) {
             e.printStackTrace();
         } catch (MalformedURLException e) {
@@ -46,10 +47,10 @@ public class Bank extends UnicastRemoteObject implements RemoteBank {
     }
 
     @Override
-    public void withdraw(int xid, String idAccount, double amout) throws RemoteException {
+    public void withdraw(int xid, String idAccount, double amount) throws RemoteException {
         try {
             RemoteBankServer bank = (RemoteBankServer) Naming.lookup("//localhost/myBank" + idAccount.substring(0, 3));
-            bank.withdraw(xid, idAccount, amout);
+            bank.withdraw(xid, idAccount, amount);
         } catch (NotBoundException e) {
             e.printStackTrace();
         } catch (MalformedURLException e) {

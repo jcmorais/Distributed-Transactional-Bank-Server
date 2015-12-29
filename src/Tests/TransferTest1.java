@@ -44,28 +44,28 @@ public class TransferTest1 extends TestCase {
         //T1
         int xid = channelMonitor.begin();
         System.out.println("Tenho o XID "+xid);
-        bank.tranfer(xid,"1001000","1011000",250);
+        bank.transfer(xid,"1001000","1011000",250);
         boolean res = channelMonitor.commit(xid);
         System.out.println("Commit = "+res+"\n\n");
 
         //T2
         xid = channelMonitor.begin();
         System.out.println("Tenho o XID "+xid);
-        bank.tranfer(xid,"1001001","1011001",250);
+        bank.transfer(xid,"1001001","1011001",250);
         res = channelMonitor.commit(xid);
         System.out.println("Commit = "+res+"\n\n");
 
         //T3
         xid = channelMonitor.begin();
         System.out.println("Tenho o XID "+xid);
-        bank.tranfer(xid,"1001001","1011001",250);
+        bank.transfer(xid,"1001001","1011001",250);
         res = channelMonitor.commit(xid);
         System.out.println("Commit = "+res+"\n\n");
 
         //T4
         xid = channelMonitor.begin();
         System.out.println("Tenho o XID "+xid);
-        bank.tranfer(xid,"1001000","1011000",250);
+        bank.transfer(xid,"1001000","1011000",250);
         res = channelMonitor.commit(xid);
         System.out.println("Commit = "+res+"\n\n");
 
@@ -73,14 +73,14 @@ public class TransferTest1 extends TestCase {
         //T5
         xid = channelMonitor.begin();
         System.out.println("Tenho o XID "+xid);
-        bank.tranfer(xid,"1011000","1001002",250);
+        bank.transfer(xid,"1011000","1001002",250);
         res = channelMonitor.commit(xid);
         System.out.println("Commit = "+res+"\n\n");
 
         //T6
         xid = channelMonitor.begin();
         System.out.println("Tenho o XID "+xid);
-        bank.tranfer(xid,"1011001","1001003",250);
+        bank.transfer(xid,"1011001","1001003",250);
         res = channelMonitor.commit(xid);
         System.out.println("Commit = "+res+"\n\n");
 
@@ -88,14 +88,14 @@ public class TransferTest1 extends TestCase {
         //T7
         xid = channelMonitor.begin();
         System.out.println("Tenho o XID "+xid);
-        bank.tranfer(xid,"1001002","1011001",250);
+        bank.transfer(xid,"1001002","1011001",250);
         res = channelMonitor.commit(xid);
         System.out.println("Commit = "+res+"\n\n");
 
         //T8
         xid = channelMonitor.begin();
         System.out.println("Tenho o XID "+xid);
-        bank.tranfer(xid,"1001003","1011000",250);
+        bank.transfer(xid,"1001003","1011000",250);
         res = channelMonitor.commit(xid);
         System.out.println("Commit = "+res+"\n\n");
 
