@@ -1,40 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3c316768-7f00-40b6-a1f4-d12fe9ea9cfd" name="Default" comment="Criado pequeno interpretador de comandos">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c7c0.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c7d1.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c7e0.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/d790.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/d7a1.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/d7b0.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c790.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c7a1.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c7b0.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/d760.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/d771.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/d780.dat" afterPath="" />
+    <list default="true" id="3c316768-7f00-40b6-a1f4-d12fe9ea9cfd" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/db.lck" afterPath="$PROJECT_DIR$/bankAccounts100/db.lck" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/log/log.ctrl" afterPath="$PROJECT_DIR$/bankAccounts100/log/log.ctrl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/log/log1.dat" afterPath="$PROJECT_DIR$/bankAccounts100/log/log1.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/log/logmirror.ctrl" afterPath="$PROJECT_DIR$/bankAccounts100/log/logmirror.ctrl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c10.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c10.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c101.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c101.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c111.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c111.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c121.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c121.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c130.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c130.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c141.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c141.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c180.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c180.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c1a1.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c1a1.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c1b1.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c1b1.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c20.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c20.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c230.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c230.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c241.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c241.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c31.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c31.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c380.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c380.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c391.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c391.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c3a1.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c3a1.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c3b1.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c3b1.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c41.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c41.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c51.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c51.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c60.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c60.dat" />
@@ -48,23 +26,13 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/log/log.ctrl" afterPath="$PROJECT_DIR$/bankAccounts101/log/log.ctrl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/log/log1.dat" afterPath="$PROJECT_DIR$/bankAccounts101/log/log1.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/log/logmirror.ctrl" afterPath="$PROJECT_DIR$/bankAccounts101/log/logmirror.ctrl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c10.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c10.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c101.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c101.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c111.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c111.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c121.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c121.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c130.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c130.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c141.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c141.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c180.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c180.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c1a1.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c1a1.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c1b1.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c1b1.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c20.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c20.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c230.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c230.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c241.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c241.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c31.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c31.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c380.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c380.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c391.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c391.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c3a1.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c3a1.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c3b1.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c3b1.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c41.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c41.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c51.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c51.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c60.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c60.dat" />
@@ -76,8 +44,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/cf0.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/cf0.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Client/Client.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Client/Client.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/service.properties" afterPath="$PROJECT_DIR$/bankAccounts100/service.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/service.properties" afterPath="$PROJECT_DIR$/bankAccounts101/service.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/derby.log" afterPath="$PROJECT_DIR$/derby.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Client/Client.java" afterPath="$PROJECT_DIR$/src/Client/Client.java" />
     </list>
@@ -154,8 +120,8 @@
       <file leaf-file-name="Client.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.12054329">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state vertical-scroll-proportion="-0.51295334">
+              <caret line="31" column="75" selection-start-line="31" selection-start-column="75" selection-end-line="31" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -723,6 +689,13 @@
       <option name="number" value="Default" />
       <updated>1451146870980</updated>
     </task>
+    <task id="LOCAL-00001" summary="Criado pequeno interpretador de comandos">
+      <created>1451422485689</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1451422485689</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -768,7 +741,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="66" y="52" width="1300" height="716" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279483" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -777,6 +750,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866043" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3279483" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19059011" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -784,14 +758,13 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279483" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1128,8 +1101,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12054329">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state vertical-scroll-proportion="-0.51295334">
+          <caret line="31" column="75" selection-start-line="31" selection-start-column="75" selection-end-line="31" selection-end-column="75" />
           <folding />
         </state>
       </provider>

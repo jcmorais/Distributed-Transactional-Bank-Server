@@ -12,24 +12,39 @@ public class Client {
     public static void main(String[] args) throws Exception {
         Channel2PC channelMonitor = new Channel2PC();
         Scanner scanner = new Scanner(System.in);
-
+        String opt;
+        boolean end = false;
 
         RemoteBank bank = (RemoteBank) Naming.lookup("//localhost/myBank");
         System.out.println(bank.listAllAccounts());
 
-        System.out.println("Insira a conta origem:");
-        String conta1 = scanner.nextLine();
-        System.out.println("Insira a conta destino:");
-        String conta2 = scanner.nextLine();
-        System.out.println("Insira a quantia:");
-        double quantia = scanner.nextDouble();
+        while(!end) {
+            System.out.println("1 - Nova Transferência\n2 - Sair");
+            opt = scanner.nextLine();
+            System.out.println(opt);
+            switch(opt) {
+                case "1":
+                    System.out.println("Insira a conta origem:");
+                    String conta1 = scanner.nextLine();
+                    System.out.println("Insira a conta destino:");
+                    String conta2 = scanner.nextLine();
+                    System.out.println("Insira a quantia:");
+                    double quantia = Double.parseDouble(scanner.nextLine());
 
-        int xid = channelMonitor.begin();
-        bank.tranfer(xid,"1001000","1011000",250);
-        boolean res = channelMonitor.commit(xid);
-        if(res) System.out.println("Transferência bem-sucedida.\n");
-        else System.out.println("Transferência mal-sucedida.\n");
-
+                    int xid = channelMonitor.begin();
+                    bank.tranfer(xid, conta1, conta2, quantia);
+                    boolean res = channelMonitor.commit(xid);
+                    if (res) System.out.println("Transferência bem-sucedida.");
+                    else System.out.println("Transferência mal-sucedida.");
+                    break;
+                case "2":
+                    end = true;
+                    break;
+                default:
+                    System.out.println("Comando não reconhecido.");
+                    break;
+            }
+        }
         //T1
         /*int xid = channelMonitor.begin();
         System.out.println("Tenho o XID "+xid);
