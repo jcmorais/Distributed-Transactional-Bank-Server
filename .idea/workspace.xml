@@ -1,34 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3c316768-7f00-40b6-a1f4-d12fe9ea9cfd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Tests/TransferTest1.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c5b0.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c5c1.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c5d0.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/d580.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/d591.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/d5a0.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c580.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c591.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c5a0.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/d550.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/d561.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/d570.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Server/Server.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Server/Server.java" afterPath="$PROJECT_DIR$/src/Bank/Server.java" />
+    <list default="true" id="3c316768-7f00-40b6-a1f4-d12fe9ea9cfd" name="Default" comment="Criado pequeno interpretador de comandos">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c7c0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c7d1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c7e0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/d790.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/d7a1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/d7b0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c790.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c7a1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c7b0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/d760.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/d771.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/d780.dat" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/db.lck" afterPath="$PROJECT_DIR$/bankAccounts100/db.lck" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/log/log.ctrl" afterPath="$PROJECT_DIR$/bankAccounts100/log/log.ctrl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/log/log1.dat" afterPath="$PROJECT_DIR$/bankAccounts100/log/log1.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/log/logmirror.ctrl" afterPath="$PROJECT_DIR$/bankAccounts100/log/logmirror.ctrl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c10.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c10.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c101.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c101.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c111.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c111.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c121.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c121.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c130.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c130.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c141.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c141.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c180.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c180.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c1a1.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c1a1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c1b1.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c1b1.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c20.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c20.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c230.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c230.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c241.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c241.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c31.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c31.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c380.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c380.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c391.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c391.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c3a1.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c3a1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c3b1.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c3b1.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c41.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c41.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c51.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c51.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/seg0/c60.dat" afterPath="$PROJECT_DIR$/bankAccounts100/seg0/c60.dat" />
@@ -42,13 +48,23 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/log/log.ctrl" afterPath="$PROJECT_DIR$/bankAccounts101/log/log.ctrl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/log/log1.dat" afterPath="$PROJECT_DIR$/bankAccounts101/log/log1.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/log/logmirror.ctrl" afterPath="$PROJECT_DIR$/bankAccounts101/log/logmirror.ctrl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c10.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c10.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c101.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c101.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c111.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c111.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c121.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c121.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c130.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c130.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c141.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c141.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c180.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c180.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c1a1.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c1a1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c1b1.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c1b1.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c20.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c20.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c230.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c230.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c241.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c241.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c31.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c31.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c380.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c380.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c391.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c391.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c3a1.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c3a1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c3b1.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c3b1.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c41.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c41.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c51.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c51.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/c60.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/c60.dat" />
@@ -58,29 +74,12 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/ca1.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/ca1.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/cb1.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/cb1.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/cf0.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/cf0.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Bank/Account.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Bank/Account.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Bank/Bank.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Bank/Bank.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Bank/BankServer.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Bank/BankServer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Bank/RemoteBank.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Bank/RemoteBank.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Bank/RemoteBankServer.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Bank/RemoteBankServer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Bank/ResourceEO.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Bank/ResourceEO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Bank/ThredBankServerResources.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Bank/ThredBankServerResources.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Client/Channel2PC.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Client/Channel2PC.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Client/Client.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Client/Client.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/DataBase/BankDAO.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/DataBase/BankDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Transactional/MiniXid.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Transactional/MiniXid.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Transactional/Monitor2PC$ChannelCommitResource.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Transactional/Monitor2PC$ChannelCommitResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Transactional/Monitor2PC$ChannelToClient.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Transactional/Monitor2PC$ChannelToClient.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Transactional/Monitor2PC$ChannelToResourse.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Transactional/Monitor2PC$ChannelToResourse.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Transactional/Monitor2PC$Monitor.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Transactional/Monitor2PC$Monitor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Transactional/Monitor2PC.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Transactional/Monitor2PC.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Transactional/Resource.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Transactional/Resource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Distributed_Transactional_Bank_Server.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Distributed_Transactional_Bank_Server.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Distributed-Transactional-Bank-Server.iml" afterPath="$PROJECT_DIR$/Distributed-Transactional-Bank-Server.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts100/service.properties" afterPath="$PROJECT_DIR$/bankAccounts100/service.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/service.properties" afterPath="$PROJECT_DIR$/bankAccounts101/service.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/derby.log" afterPath="$PROJECT_DIR$/derby.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Bank/Bank.java" afterPath="$PROJECT_DIR$/src/Bank/Bank.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Client/Client.java" afterPath="$PROJECT_DIR$/src/Client/Client.java" />
     </list>
     <ignored path="Distributed-Transactional-Bank-Server.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -106,20 +105,8 @@
         <entry file="file://$PROJECT_DIR$/src/Bank/Server.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
+              <caret line="15" column="55" selection-start-line="15" selection-start-column="55" selection-end-line="15" selection-end-column="55" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TransferTest1.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Tests/TransferTest1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33333334">
-              <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -128,7 +115,7 @@
         <entry file="file://$PROJECT_DIR$/src/Bank/BankServer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+              <caret line="39" column="48" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -138,7 +125,7 @@
         <entry file="file://$PROJECT_DIR$/src/Bank/Bank.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="83" column="19" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -164,11 +151,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Client.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="51" />
+            <state vertical-scroll-proportion="0.12054329">
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -189,11 +176,11 @@
   <component name="GradleLocalSettings">
     <option name="modificationStamps">
       <map>
+        <entry key="$USER_HOME$/ChatServer" value="2895358442000" />
+        <entry key="$USER_HOME$/ChatServer/ChatServer" value="2897068740000" />
         <entry key="$USER_HOME$/Dropbox/MEI/PSD/aulas/Actor/ChatRoom" value="2890534525000" />
         <entry key="$USER_HOME$/Dropbox/MEI/PSD/aulas/Actor/Hello" value="2890374756000" />
         <entry key="$USER_HOME$/Dropbox/MEI/PSD/aulas/Actor/HelloIDE" value="1445186994000" />
-        <entry key="$PROJECT_DIR$/../ChatServer" value="2895358442000" />
-        <entry key="$PROJECT_DIR$/../ChatServer/ChatServer" value="2897068740000" />
       </map>
     </option>
     <option name="externalProjectsViewState">
@@ -206,17 +193,20 @@
         <option value="$PROJECT_DIR$/src/Bank/ThredBankServerResources.java" />
         <option value="$PROJECT_DIR$/src/Transactional/Monitor2PC.java" />
         <option value="$PROJECT_DIR$/src/DataBase/BankDAO.java" />
-        <option value="$PROJECT_DIR$/src/Bank/Server.java" />
         <option value="$PROJECT_DIR$/src/Tests/DepositTest.java" />
-        <option value="$PROJECT_DIR$/src/Client/Client.java" />
         <option value="$PROJECT_DIR$/src/Bank/Bank.java" />
         <option value="$PROJECT_DIR$/src/Tests/TransferTest1.java" />
+        <option value="$PROJECT_DIR$/src/Bank/Server.java" />
+        <option value="$PROJECT_DIR$/src/Bank/BankServer.java" />
+        <option value="$PROJECT_DIR$/src/Client/Client.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1280" />
-    <option name="height" value="800" />
+    <option name="x" value="66" />
+    <option name="y" value="52" />
+    <option name="width" value="1300" />
+    <option name="height" value="716" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -244,6 +234,8 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -354,26 +346,39 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="gradle.experimental" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="FullScreen" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/junit.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="findjar.last.used.dir" value="$PROJECT_DIR$" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="72" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="91" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="97" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="951" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="72" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="91" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="97" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="951" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TransferTest1">
+  <component name="RunManager" selected="Application.Client">
     <configuration default="false" name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -702,12 +707,15 @@
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.TransferTest1" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Server" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Server" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.TransferTest1" />
       </list>
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="3c316768-7f00-40b6-a1f4-d12fe9ea9cfd" name="Default" comment="" />
@@ -718,9 +726,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TransferTest1 - 2015.12.26 at 17h 02m 19s.xml">
-      <configuration name="TransferTest1" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TransferTest1 - 2015.12.26 at 17h 04m 21s.xml">
       <configuration name="TransferTest1" configurationId="JUnit" />
     </history-entry>
@@ -748,6 +753,9 @@
     <history-entry file="TransferTest1 - 2015.12.26 at 17h 14m 51s.xml">
       <configuration name="TransferTest1" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TransferTest1 - 2015.12.29 at 19h 45m 27s.xml">
+      <configuration name="TransferTest1" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -759,35 +767,48 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="false" />
+    <frame x="66" y="52" width="1300" height="716" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33013698" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279483" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866043" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19059011" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279483" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Criado interpretador de comandos" />
+    <MESSAGE value="Criado pequeno interpretador de comandos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Criado pequeno interpretador de comandos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -802,12 +823,6 @@
           <line>83</line>
           <properties />
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Bank/BankServer.java</url>
-          <line>116</line>
-          <properties />
-          <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/DataBase/BankDAO.java</url>
@@ -833,12 +848,6 @@
           <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/Bank/BankServer.java</url>
-          <line>114</line>
-          <properties class="Bank.BankServer" method="getAccountBalance" />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
       </breakpoints>
       <option name="time" value="8" />
     </breakpoint-manager>
@@ -849,6 +858,144 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Bank/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Bank/BankServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="48" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Bank/Bank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataBase/BankDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Bank/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Bank/BankServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Bank/Bank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="83" column="19" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataBase/BankDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/Channel2PC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Bank/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tests/TransferTest1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Bank/BankServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Bank/Bank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="83" column="19" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataBase/BankDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/Channel2PC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Bank/Server.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -877,9 +1024,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="104" column="56" selection-start-line="104" selection-start-column="56" selection-end-line="104" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -923,26 +1068,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Bank/Server.java">
+    <entry file="file://$PROJECT_DIR$/src/Tests/TransferTest1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
-          <folding />
+        <state vertical-scroll-proportion="0.4117647">
+          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
+    <entry file="file://$PROJECT_DIR$/src/Bank/BankServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/Channel2PC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <caret line="39" column="48" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -955,10 +1094,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Bank/BankServer.java">
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/System.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3316062">
+          <caret line="58" column="19" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Bank/Server.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+          <caret line="15" column="55" selection-start-line="15" selection-start-column="55" selection-end-line="15" selection-end-column="55" />
           <folding />
         </state>
       </provider>
@@ -966,18 +1113,24 @@
     <entry file="file://$PROJECT_DIR$/src/Bank/Bank.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="83" column="19" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tests/TransferTest1.java">
+    <entry file="file://$PROJECT_DIR$/src/Client/Channel2PC.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12054329">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

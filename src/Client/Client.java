@@ -3,6 +3,7 @@ package Client;
 import Bank.RemoteBank;
 
 import java.rmi.Naming;
+import java.util.Scanner;
 
 /**
  * Created by carlosmorais on 15/12/15.
@@ -10,14 +11,27 @@ import java.rmi.Naming;
 public class Client {
     public static void main(String[] args) throws Exception {
         Channel2PC channelMonitor = new Channel2PC();
+        Scanner scanner = new Scanner(System.in);
 
-        //criar um interpertador de comandos!
 
         RemoteBank bank = (RemoteBank) Naming.lookup("//localhost/myBank");
         System.out.println(bank.listAllAccounts());
 
-        //T1
+        System.out.println("Insira a conta origem:");
+        String conta1 = scanner.nextLine();
+        System.out.println("Insira a conta destino:");
+        String conta2 = scanner.nextLine();
+        System.out.println("Insira a quantia:");
+        double quantia = scanner.nextDouble();
+
         int xid = channelMonitor.begin();
+        bank.tranfer(xid,"1001000","1011000",250);
+        boolean res = channelMonitor.commit(xid);
+        if(res) System.out.println("Transferência bem-sucedida.\n");
+        else System.out.println("Transferência mal-sucedida.\n");
+
+        //T1
+        /*int xid = channelMonitor.begin();
         System.out.println("Tenho o XID "+xid);
         bank.tranfer(xid,"1001000","1011000",250);
         boolean res = channelMonitor.commit(xid);

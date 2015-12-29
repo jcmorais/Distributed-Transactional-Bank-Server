@@ -1,26 +1,26 @@
 ----------------------------------------------------------------
-Sat Dec 26 17:14:28 WET 2015:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0151-df48-ca8d-000002ef62c0 
-on database directory /Users/carlosmorais/GitHub/Distributed-Transactional-Bank-Server/bankAccounts100 with class loader sun.misc.Launcher$AppClassLoader@27716f4 
-Loaded from file:/Users/carlosmorais/GitHub/Distributed-Transactional-Bank-Server/DerbyJAR/derby.jar
+Tue Dec 29 20:42:24 WET 2015:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0151-ef7a-3dfd-0000068b3bc0 
+on database directory /home/jpp/Distributed-Transactional-Bank-Server/bankAccounts100 with class loader sun.misc.Launcher$AppClassLoader@4617c264 
+Loaded from file:/home/jpp/Distributed-Transactional-Bank-Server/DerbyJAR/derby.jar
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_60-b27
-user.dir=/Users/carlosmorais/GitHub/Distributed-Transactional-Bank-Server
-os.name=Mac OS X
-os.arch=x86_64
-os.version=10.11.1
+java.runtime.version=1.8.0_66-b17
+user.dir=/home/jpp/Distributed-Transactional-Bank-Server
+os.name=Linux
+os.arch=amd64
+os.version=4.2.0-22-generic
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
 ----------------------------------------------------------------
-Sat Dec 26 17:14:29 WET 2015:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance 888c4022-0151-df48-ca8d-000002ef62c0 
-on database directory /Users/carlosmorais/GitHub/Distributed-Transactional-Bank-Server/bankAccounts101 with class loader sun.misc.Launcher$AppClassLoader@27716f4 
-Loaded from file:/Users/carlosmorais/GitHub/Distributed-Transactional-Bank-Server/DerbyJAR/derby.jar
+Tue Dec 29 20:42:32 WET 2015:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance c87100b8-0151-ef7a-3dfd-0000068b3bc0 
+on database directory /home/jpp/Distributed-Transactional-Bank-Server/bankAccounts101 with class loader sun.misc.Launcher$AppClassLoader@4617c264 
+Loaded from file:/home/jpp/Distributed-Transactional-Bank-Server/DerbyJAR/derby.jar
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_60-b27
-user.dir=/Users/carlosmorais/GitHub/Distributed-Transactional-Bank-Server
-os.name=Mac OS X
-os.arch=x86_64
-os.version=10.11.1
+java.runtime.version=1.8.0_66-b17
+user.dir=/home/jpp/Distributed-Transactional-Bank-Server
+os.name=Linux
+os.arch=amd64
+os.version=4.2.0-22-generic
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
