@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Wed Dec 30 21:43:38 WET 2015:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0151-f4d8-a769-0000068b3880 
+Wed Dec 30 22:31:26 WET 2015:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0151-f504-6b83-0000068a2fe0 
 on database directory /home/jpp/Distributed-Transactional-Bank-Server/bankAccounts100 with class loader sun.misc.Launcher$AppClassLoader@4617c264 
 Loaded from file:/home/jpp/Distributed-Transactional-Bank-Server/DerbyJAR/derby.jar
 java.vendor=Oracle Corporation
@@ -12,8 +12,8 @@ os.version=4.2.0-22-generic
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
 ----------------------------------------------------------------
-Wed Dec 30 21:43:40 WET 2015:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance 888c4022-0151-f4d8-a769-0000068b3880 
+Wed Dec 30 22:31:28 WET 2015:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance 888c4022-0151-f504-6b83-0000068a2fe0 
 on database directory /home/jpp/Distributed-Transactional-Bank-Server/bankAccounts101 with class loader sun.misc.Launcher$AppClassLoader@4617c264 
 Loaded from file:/home/jpp/Distributed-Transactional-Bank-Server/DerbyJAR/derby.jar
 java.vendor=Oracle Corporation

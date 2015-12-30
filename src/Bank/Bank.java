@@ -23,9 +23,15 @@ public class Bank extends UnicastRemoteObject implements RemoteBank {
             try {
                 RemoteBankServer bankS = (RemoteBankServer) Naming.lookup("//localhost/myBank"+idSource.substring(0,3));
                 RemoteBankServer bankD = (RemoteBankServer) Naming.lookup("//localhost/myBank"+idDestiny.substring(0,3));
-
-                bankS.withdraw(xid, idSource, amount);
-                bankD.deposit(xid, idDestiny, amount);
+                String s = idSource.substring(0,3);
+                String d = idDestiny.substring(0,3);
+                System.out.println(idSource + " " + idDestiny);
+                if(s.equals(d)) {
+                    bankS.transfer(xid, idSource, idDestiny, amount);
+                } else {
+                    bankS.withdraw(xid, idSource, amount);
+                    bankD.deposit(xid, idDestiny, amount);
+                }
             } catch (NotBoundException e) {
                 e.printStackTrace();
             } catch (MalformedURLException e) {

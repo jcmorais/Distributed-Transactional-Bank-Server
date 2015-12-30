@@ -43,17 +43,15 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/cb1.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/cb1.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bankAccounts101/seg0/cf0.dat" afterPath="$PROJECT_DIR$/bankAccounts101/seg0/cf0.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Bank/Bank.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Bank/Bank.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Bank/ResourceEO.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Bank/ResourceEO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Bank/ThredBankServerResources.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Bank/ThredBankServerResources.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Client/Client.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Client/Client.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Transactional/Monitor2PC$ChannelCommitResource.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Transactional/Monitor2PC$ChannelCommitResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Transactional/Monitor2PC$ChannelToClient.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Transactional/Monitor2PC$ChannelToClient.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Transactional/Monitor2PC$ChannelToResourse.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Transactional/Monitor2PC$ChannelToResourse.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Transactional/Monitor2PC$Monitor.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Transactional/Monitor2PC$Monitor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Transactional/Monitor2PC.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Transactional/Monitor2PC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Bank/BankServer.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Bank/BankServer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Bank/RemoteBankServer.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/Bank/RemoteBankServer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/DataBase/BankDAO.class" afterPath="$PROJECT_DIR$/out/production/Distributed-Transactional-Bank-Server/DataBase/BankDAO.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/derby.log" afterPath="$PROJECT_DIR$/derby.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Client/Client.java" afterPath="$PROJECT_DIR$/src/Client/Client.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Bank/Bank.java" afterPath="$PROJECT_DIR$/src/Bank/Bank.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Bank/BankServer.java" afterPath="$PROJECT_DIR$/src/Bank/BankServer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Bank/RemoteBankServer.java" afterPath="$PROJECT_DIR$/src/Bank/RemoteBankServer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DataBase/BankDAO.java" afterPath="$PROJECT_DIR$/src/DataBase/BankDAO.java" />
     </list>
     <ignored path="Distributed-Transactional-Bank-Server.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -89,7 +87,7 @@
         <entry file="file://$PROJECT_DIR$/src/Bank/BankServer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="48" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
+              <caret line="77" column="60" selection-start-line="77" selection-start-column="60" selection-end-line="77" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -115,11 +113,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BankDAO.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BankDAO.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DataBase/BankDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.17777778">
+              <caret line="46" column="73" selection-start-line="46" selection-start-column="73" selection-end-line="46" selection-end-column="73" />
               <folding />
             </state>
           </provider>
@@ -129,7 +127,7 @@
         <entry file="file://$PROJECT_DIR$/src/Bank/Bank.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+              <caret line="27" column="61" selection-start-line="27" selection-start-column="61" selection-end-line="27" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -145,10 +143,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Client.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.75555557">
+            <state vertical-scroll-proportion="0.0">
               <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
               <folding />
             </state>
@@ -184,17 +182,18 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/DataBase/BankDAO.java" />
         <option value="$PROJECT_DIR$/src/Tests/DepositTest.java" />
         <option value="$PROJECT_DIR$/src/Bank/Server.java" />
-        <option value="$PROJECT_DIR$/src/Bank/BankServer.java" />
         <option value="$PROJECT_DIR$/src/Bank/RemoteBank.java" />
         <option value="$PROJECT_DIR$/src/Tests/TransferTest1.java" />
-        <option value="$PROJECT_DIR$/src/Bank/Bank.java" />
         <option value="$PROJECT_DIR$/src/Bank/ThredBankServerResources.java" />
         <option value="$PROJECT_DIR$/src/Bank/ResourceEO.java" />
         <option value="$PROJECT_DIR$/src/Transactional/Monitor2PC.java" />
         <option value="$PROJECT_DIR$/src/Client/Client.java" />
+        <option value="$PROJECT_DIR$/src/Bank/RemoteBankServer.java" />
+        <option value="$PROJECT_DIR$/src/Bank/BankServer.java" />
+        <option value="$PROJECT_DIR$/src/Bank/Bank.java" />
+        <option value="$PROJECT_DIR$/src/DataBase/BankDAO.java" />
       </list>
     </option>
   </component>
@@ -755,7 +754,13 @@
       <option name="project" value="LOCAL" />
       <updated>1451501244105</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Acrescentado Thread.sleep">
+      <created>1451511892967</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1451511892967</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -810,10 +815,10 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866043" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32766616" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32766616" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19043824" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19043824" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -846,43 +851,44 @@
     <MESSAGE value="Adicionada criação de thread em bank.transfer" />
     <MESSAGE value="Alterado HashMap para ConcurrentHashMap" />
     <MESSAGE value="Prepare, commit e rollback como synchronized(xar)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Prepare, commit e rollback como synchronized(xar)" />
+    <MESSAGE value="Acrescentado Thread.sleep" />
+    <option name="LAST_COMMIT_MESSAGE" value="Acrescentado Thread.sleep" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Bank/Bank.java</url>
-          <line>85</line>
+          <line>91</line>
           <properties />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Bank/Bank.java</url>
-          <line>86</line>
+          <line>92</line>
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/DataBase/BankDAO.java</url>
-          <line>68</line>
+          <line>83</line>
           <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/DataBase/BankDAO.java</url>
-          <line>81</line>
+          <line>96</line>
           <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/DataBase/BankDAO.java</url>
-          <line>75</line>
+          <line>90</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/DataBase/BankDAO.java</url>
-          <line>74</line>
+          <line>89</line>
           <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
@@ -1184,14 +1190,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Bank/RemoteBankServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/System.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3316062">
@@ -1239,34 +1237,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Bank/Bank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataBase/BankDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Bank/Server.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="55" selection-start-line="15" selection-start-column="55" selection-end-line="15" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Bank/BankServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="48" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -1279,10 +1253,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Bank/ThredBankServerResources.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="10" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Bank/RemoteBankServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35555556">
+          <caret line="9" column="62" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
           <folding />
         </state>
       </provider>
@@ -1295,10 +1285,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
+    <entry file="file://$PROJECT_DIR$/src/Bank/BankServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75555557">
-          <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="77" column="60" selection-start-line="77" selection-start-column="60" selection-end-line="77" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Bank/Bank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="61" selection-start-line="27" selection-start-column="61" selection-end-line="27" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataBase/BankDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17777778">
+          <caret line="46" column="73" selection-start-line="46" selection-start-column="73" selection-end-line="46" selection-end-column="73" />
           <folding />
         </state>
       </provider>

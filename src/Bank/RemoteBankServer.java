@@ -7,6 +7,7 @@ import java.rmi.RemoteException;
  * Created by carlosmorais on 21/12/15.
  */
 public interface RemoteBankServer extends Remote {
+    void transfer(int idx, String idSource, String idDestiny, double amount) throws RemoteException;
     void deposit(int idx, String idAccount, double amount) throws RemoteException;
     void withdraw(int idx, String idAccount, double amount) throws RemoteException;
 

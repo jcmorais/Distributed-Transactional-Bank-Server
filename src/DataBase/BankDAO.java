@@ -43,6 +43,21 @@ public class BankDAO {
             st.executeUpdate("insert into dbInfo values (1000)");
     }
 
+    public void transfer(Connection connection, String idS, String idD, double amount) throws SQLException, RemoteException {
+        String updateStatement = "UPDATE accounts SET balance = balance - ? WHERE id = ? ";
+        PreparedStatement statement = connection.prepareStatement(updateStatement);
+        statement.setDouble(1,amount);
+        statement.setString(2,idS);
+        statement.execute();
+        updateStatement = "UPDATE accounts SET balance = balance + ? WHERE id = ? ";
+        statement = connection.prepareStatement(updateStatement);
+        statement.setDouble(1,amount);
+        statement.setString(2,idD);
+        statement.execute();
+        statement.close();
+        connection.close();
+    }
+
     public void deposit(Connection connection, String id, double amount) throws SQLException, RemoteException {
         String updateStatement = "UPDATE accounts SET balance = balance + ? WHERE id = ? ";
         PreparedStatement statement = connection.prepareStatement(updateStatement);

@@ -68,6 +68,21 @@ public class BankServer extends UnicastRemoteObject implements RemoteBankServer{
 
 */
     @Override
+    public void transfer(int xid, String idSource, String idDestiny, double amount) throws RemoteException {
+        try {
+            Connection con = xac.getConnection();
+            XAResource xar = xac.getXAResource();
+            MiniXid mxid = new MiniXid(xid);
+            this.myResourses.addResouce(xid, xar);
+            xar.start(mxid, XAResource.TMNOFLAGS);
+            this.bankDAO.transfer(con, idSource, idDestiny, amount);
+            xar.end(mxid, XAResource.TMSUCCESS);;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
     public void deposit(int xid, String idAccount, double amount) throws RemoteException {
         try {
             Connection con = xac.getConnection();
