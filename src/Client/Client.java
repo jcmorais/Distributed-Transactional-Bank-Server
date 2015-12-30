@@ -33,6 +33,7 @@ public class Client {
 
                     int xid = channelMonitor.begin();
                     bank.transfer(xid, conta1, conta2, quantia);
+                    Thread.sleep(2000);
                     boolean res = channelMonitor.commit(xid);
                     if (res) System.out.println("Transferência bem-sucedida.");
                     else System.out.println("Transferência mal-sucedida.");
