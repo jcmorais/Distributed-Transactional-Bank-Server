@@ -35,28 +35,34 @@ public class ResourceEO {
 
 
     public int prepare(){
-        try {
-            int res = this.xar.prepare(new MiniXid((this.xid)));
-            return res;
-        } catch (XAException e) {
-            e.printStackTrace();
+        synchronized (xar) {
+            try {
+                int res = this.xar.prepare(new MiniXid((this.xid)));
+                return res;
+            } catch (XAException e) {
+                e.printStackTrace();
+            }
+            return -1; //something wrong!
         }
-        return -1; //something wrong!
     }
 
     public void commit(){
-        try {
-            this.xar.commit(new MiniXid(this.xid),false);
-        } catch (XAException e) {
-            e.printStackTrace();
+        synchronized (xar) {
+            try {
+                this.xar.commit(new MiniXid(this.xid), false);
+            } catch (XAException e) {
+                e.printStackTrace();
+            }
         }
     }
 
-    public void rollback(){
-        try {
-            this.xar.rollback(new MiniXid(this.xid));
-        } catch (XAException e) {
-            e.printStackTrace();
+    public void rollback() {
+        synchronized (xar) {
+            try {
+                this.xar.rollback(new MiniXid(this.xid));
+            } catch (XAException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
