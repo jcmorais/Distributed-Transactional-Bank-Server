@@ -5,6 +5,7 @@ import org.zeromq.ZMQ;
 import javax.transaction.xa.XAResource;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created by carlosmorais on 21/12/15.
@@ -17,7 +18,7 @@ public class ThredBankServerResources extends Thread{
     private ZMQ.Socket socketReqSub; //socket to respond to a notification which was SUBscribed !
 
     public ThredBankServerResources(){
-        this.myResources = new HashMap<String, ResourceEO>();
+        this.myResources = new ConcurrentHashMap<String, ResourceEO>();
         this.context = ZMQ.context(1);
 
         this.socketReqResource = context.socket(ZMQ.REQ);
@@ -31,7 +32,7 @@ public class ThredBankServerResources extends Thread{
     }
 
     //adds a new Resourse and send it to Transational Manager
-    public synchronized void addResouce(int xid, XAResource xar){
+    public void addResouce(int xid, XAResource xar){
         String req = "AddRes" + "_" + xid, rep;
         socketReqResource.send(req);
         byte[] b =  socketReqResource.recv();
