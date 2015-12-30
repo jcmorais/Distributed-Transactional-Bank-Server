@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created by carlosmorais on 19/12/15.
@@ -121,13 +122,13 @@ public class Monitor2PC {
         private ChannelCommitResource commitResource;
 
         public Monitor() {
-            this.resouces = new HashMap<Integer, List<Resource>>();
+            this.resouces = new ConcurrentHashMap<Integer, List<Resource>>();
             this.xid = 1;
             this.commitResource = new ChannelCommitResource();
         }
 
         //add a new Resource to XID
-        public synchronized String addResouce(int xid) {
+        public String addResouce(int xid) {
             int size = this.resouces.get(xid).size();
             String rKey = xid+":"+(size+1);
             Resource r = new Resource(xid,  rKey);
@@ -135,36 +136,38 @@ public class Monitor2PC {
             return rKey;
         }
 
-        public synchronized int begin() {
+        public int begin() {
             this.resouces.put(this.xid, new ArrayList<Resource>());
             return this.xid++;
         }
 
-        public synchronized boolean commit(int xid) {
-            boolean doCommit = true;
+        public boolean commit(int xid) {
+            synchronized (this.commitResource) {
+                boolean doCommit = true;
 
-            //phase1: preparare for all resources with the xid
-            for(Resource r : this.resouces.get(xid)){
-                int res = this.commitResource.sendPrepare(r.getSequenceXAR());
-                System.out.println("Prepare "+r.getSequenceXAR()+" has result "+res);
-                r.setPrepare(res);
+                //phase1: preparare for all resources with the xid
+                for (Resource r : this.resouces.get(xid)) {
+                    int res = this.commitResource.sendPrepare(r.getSequenceXAR());
+                    System.out.println("Prepare " + r.getSequenceXAR() + " has result " + res);
+                    r.setPrepare(res);
 
-                if (!((res == XAResource.XA_OK) || (res == XAResource.XA_RDONLY))) {
-                    doCommit = false; //if one prepare fail, don't do the commit!
+                    if (!((res == XAResource.XA_OK) || (res == XAResource.XA_RDONLY))) {
+                        doCommit = false; //if one prepare fail, don't do the commit!
+                    }
                 }
-            }
 
-            //phase2: commit or roolback for all resources with the xid
-            for(Resource r : this.resouces.get(xid)){
-                if (r.getPrepare() == XAResource.XA_OK) {
-                    System.out.println("phase2 to "+r.getSequenceXAR());
-                    if (doCommit)
-                        this.commitResource.sendCommit(r.getSequenceXAR());
-                    else
-                        this.commitResource.sendRollBack(r.getSequenceXAR());
+                //phase2: commit or roolback for all resources with the xid
+                for (Resource r : this.resouces.get(xid)) {
+                    if (r.getPrepare() == XAResource.XA_OK) {
+                        System.out.println("phase2 to " + r.getSequenceXAR());
+                        if (doCommit)
+                            this.commitResource.sendCommit(r.getSequenceXAR());
+                        else
+                            this.commitResource.sendRollBack(r.getSequenceXAR());
+                    }
                 }
+                return doCommit;
             }
-            return doCommit;
         }
     }
 

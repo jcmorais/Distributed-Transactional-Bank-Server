@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3c316768-7f00-40b6-a1f4-d12fe9ea9cfd" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Bank/ResourceEO.java" afterPath="$PROJECT_DIR$/src/Bank/ResourceEO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Transactional/Monitor2PC.java" afterPath="$PROJECT_DIR$/src/Transactional/Monitor2PC.java" />
     </list>
     <ignored path="Distributed-Transactional-Bank-Server.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,21 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResourceEO.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Bank/ResourceEO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.4974533">
-              <caret line="58" column="28" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Monitor2PC.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Monitor2PC.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Transactional/Monitor2PC.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="120" column="52" selection-start-line="120" selection-start-column="38" selection-end-line="120" selection-end-column="52" />
+            <state vertical-scroll-proportion="4.859083">
+              <caret line="170" column="9" selection-start-line="170" selection-start-column="9" selection-end-line="170" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -144,7 +134,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Transactional/Monitor2PC.java" />
         <option value="$PROJECT_DIR$/src/DataBase/BankDAO.java" />
         <option value="$PROJECT_DIR$/src/Tests/DepositTest.java" />
         <option value="$PROJECT_DIR$/src/Bank/Server.java" />
@@ -155,6 +144,7 @@
         <option value="$PROJECT_DIR$/src/Bank/Bank.java" />
         <option value="$PROJECT_DIR$/src/Bank/ThredBankServerResources.java" />
         <option value="$PROJECT_DIR$/src/Bank/ResourceEO.java" />
+        <option value="$PROJECT_DIR$/src/Transactional/Monitor2PC.java" />
       </list>
     </option>
   </component>
@@ -709,7 +699,13 @@
       <option name="project" value="LOCAL" />
       <updated>1451500952442</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Prepare, commit e rollback como synchronized(xar)">
+      <created>1451501244105</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1451501244105</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -799,7 +795,8 @@
     <MESSAGE value="Corrigidos nomes de algumas variaveis" />
     <MESSAGE value="Adicionada criação de thread em bank.transfer" />
     <MESSAGE value="Alterado HashMap para ConcurrentHashMap" />
-    <option name="LAST_COMMIT_MESSAGE" value="Alterado HashMap para ConcurrentHashMap" />
+    <MESSAGE value="Prepare, commit e rollback como synchronized(xar)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prepare, commit e rollback como synchronized(xar)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1168,6 +1165,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Bank/ResourceEO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5110357">
+          <caret line="58" column="28" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Bank/ThredBankServerResources.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1178,16 +1183,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Transactional/Monitor2PC.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="120" column="52" selection-start-line="120" selection-start-column="38" selection-end-line="120" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Bank/ResourceEO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4974533">
-          <caret line="58" column="28" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
+        <state vertical-scroll-proportion="4.859083">
+          <caret line="170" column="9" selection-start-line="170" selection-start-column="9" selection-end-line="170" selection-end-column="9" />
           <folding />
         </state>
       </provider>
