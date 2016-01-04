@@ -1,22 +1,70 @@
 package Client;
 
-import Bank.RemoteBank;
+import Bank.RemoteBankServer;
 
+import java.net.MalformedURLException;
 import java.rmi.Naming;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
 import java.util.Scanner;
 
 /**
  * Created by carlosmorais on 15/12/15.
  */
 public class Client {
+
+    public static class BankClient{
+        public void transfer ( int xid, String idSource, String idDestiny,double amount){
+        try {
+            RemoteBankServer bankS = (RemoteBankServer) Naming.lookup("//localhost/myBank" + idSource.substring(0, 3));
+            RemoteBankServer bankD = (RemoteBankServer) Naming.lookup("//localhost/myBank" + idDestiny.substring(0, 3));
+
+
+            //Thread.sleep(500);
+            bankD.deposit(xid, idDestiny, amount);
+            bankS.withdraw(xid, idSource, amount);
+
+        } catch (NotBoundException e) {
+            e.printStackTrace();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        }
+        public String listAllAccounts() throws RemoteException {
+            StringBuilder res = new StringBuilder();
+
+            try {
+                RemoteBankServer bank1 = (RemoteBankServer) Naming.lookup("//localhost/myBank100");
+                RemoteBankServer bank2 = (RemoteBankServer) Naming.lookup("//localhost/myBank101");
+
+                res.append( bank1.getAllAccounts()+"\n");
+                res.append( bank2.getAllAccounts()+"\n");
+            } catch (NotBoundException e) {
+                e.printStackTrace();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+
+            return res.toString();
+        }
+
+    }
+
+
+
+
     public static void main(String[] args) throws Exception {
         Channel2PC channelMonitor = new Channel2PC();
         Scanner scanner = new Scanner(System.in);
         String opt;
         boolean end = false;
 
-        RemoteBank bank = (RemoteBank) Naming.lookup("//localhost/myBank");
+        //RemoteBank bank = (RemoteBank) Naming.lookup("//localhost/myBank");
+        BankClient bank = new BankClient();
         System.out.println(bank.listAllAccounts());
+
 
         while(!end) {
             System.out.println("------------------------------\n1 - Nova Transferência\n2 - Sair\n------------------------------");
@@ -33,10 +81,11 @@ public class Client {
 
                     int xid = channelMonitor.begin();
                     bank.transfer(xid, conta1, conta2, quantia);
-                    Thread.sleep(2000);
+                    //Thread.sleep(2000);
                     boolean res = channelMonitor.commit(xid);
                     if (res) System.out.println("Transferência bem-sucedida.");
                     else System.out.println("Transferência mal-sucedida.");
+                    System.out.println(bank.listAllAccounts());
                     break;
                 case "2":
                     end = true;
