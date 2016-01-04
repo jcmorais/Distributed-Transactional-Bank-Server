@@ -6,11 +6,14 @@ import org.apache.derby.jdbc.EmbeddedXADataSource;
 
 import javax.sql.XAConnection;
 import javax.transaction.xa.XAResource;
+import java.net.MalformedURLException;
+import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * Created by carlosmorais on 21/12/15.
@@ -20,7 +23,10 @@ import java.util.List;
 public class BankServer extends UnicastRemoteObject implements RemoteBankServer{
     private int bankServerID;
     private BankDAO bankDAO;
-    private XAConnection xac;
+   // private XAConnection xac;
+    private EmbeddedXADataSource ds;
+    XAResource xar;
+
     private ThredBankServerResources myResourses;
 
     public BankServer(int bankID) throws RemoteException, SQLException {
@@ -36,9 +42,10 @@ public class BankServer extends UnicastRemoteObject implements RemoteBankServer{
 
     public void initXAConnection(int bankID){
         try {
-            EmbeddedXADataSource ds = new EmbeddedXADataSource();
+            //EmbeddedXADataSource ds = new EmbeddedXADataSource();
+            ds = new EmbeddedXADataSource();
             this.bankDAO.GenerateDB(bankID, ds);
-            this.xac = ds.getXAConnection();
+            //this.xac = ds.getXAConnection();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -70,6 +77,7 @@ public class BankServer extends UnicastRemoteObject implements RemoteBankServer{
     @Override
     public void transfer(int xid, String idSource, String idDestiny, double amount) throws RemoteException {
         try {
+            XAConnection xac = ds.getXAConnection();
             Connection con = xac.getConnection();
             XAResource xar = xac.getXAResource();
             MiniXid mxid = new MiniXid(xid);
@@ -85,6 +93,7 @@ public class BankServer extends UnicastRemoteObject implements RemoteBankServer{
     @Override
     public void deposit(int xid, String idAccount, double amount) throws RemoteException {
         try {
+            XAConnection xac = ds.getXAConnection();
             Connection con = xac.getConnection();
             XAResource xar = xac.getXAResource();
             MiniXid mxid = new MiniXid(xid);
@@ -100,6 +109,7 @@ public class BankServer extends UnicastRemoteObject implements RemoteBankServer{
     @Override
     public void withdraw(int xid, String idAccount, double amount) throws RemoteException {
         try {
+            XAConnection xac = ds.getXAConnection();
             Connection con = xac.getConnection();
             XAResource xar = xac.getXAResource();
             MiniXid mxid = new MiniXid(xid);
@@ -117,6 +127,7 @@ public class BankServer extends UnicastRemoteObject implements RemoteBankServer{
     public String getAllAccounts() throws RemoteException {
         StringBuilder res=new StringBuilder();
         try {
+            XAConnection xac = ds.getXAConnection();
             List<Account> acs = this.bankDAO.getAllAccounts(xac.getConnection());
             for(Account c : acs)
                 res.append(c.toString()+"\n");
@@ -129,6 +140,7 @@ public class BankServer extends UnicastRemoteObject implements RemoteBankServer{
     @Override
     public Double getAccountBalance(String idAccount) throws RemoteException {
         try {
+            XAConnection xac = ds.getXAConnection();
             return this.bankDAO.getBalance(xac.getConnection(),idAccount);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -136,5 +148,14 @@ public class BankServer extends UnicastRemoteObject implements RemoteBankServer{
         return -1.0; //something wrong?
     }
 
+
+    public static void main(String[] args) throws RemoteException, SQLException, MalformedURLException {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Qual o identificador do Servidor a arrancar?");
+        int id = in.nextInt();
+        BankServer bankServer = new BankServer(id);
+        Naming.rebind("myBank"+id, bankServer);
+        System.out.println("BankServer"+id+" start");
+    }
 
 }
