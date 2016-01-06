@@ -6,9 +6,9 @@ import org.zeromq.ZMQ;
  * Created by carlosmorais on 26/12/15.
  */
 
-/*
-Comunication Channel for de Transational Manager
-    ->responsible for sending the begin() and commit()
+
+/**
+ *  Comunication Channel for de Transational Manager responsible for sending the begin() and commit()
  */
 
 public class Channel2PC {
@@ -26,7 +26,6 @@ public class Channel2PC {
         socket.send(request); //send a request to start a new Transaction
         byte[] b = socket.recv(); //receives a XID of the requested transaction
         return Integer.parseInt(new String(b));
-        //return -1; //há um problema a comunicar com o Monitor2PC
     }
 
     public boolean commit(int xid){

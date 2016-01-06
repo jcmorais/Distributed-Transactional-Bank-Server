@@ -91,7 +91,6 @@ public class BankDAO {
             balance = rs.getDouble(1);
         }
         //else exception??
-
         statement.close();
         connection.close();
         return balance;
@@ -131,40 +130,5 @@ public class BankDAO {
         connection.close();
         return accounts;
     }
-
-    /*
-    public int getNextIdGen(Connection connection) throws SQLException {
-        String queryStatement = "SELECT idgen FROM dbInfo";
-        String updateStatement = "UPDATE dbInfo SET idgen = idgen+1";
-
-        PreparedStatement statement = connection.prepareStatement(queryStatement);
-        PreparedStatement statement2 = connection.prepareStatement(updateStatement);
-
-        ResultSet rs = statement.executeQuery();
-        int idGen=0;
-
-        if(rs.next())
-            idGen = rs.getInt(1);
-
-        statement2.execute(); //update IdGen
-
-        statement.close();
-        statement2.close();
-        connection.close();
-
-        return idGen;
-    }
-
-
-    public void openAccount(Connection connection, String id) throws SQLException {
-        String updateStatement = "INSERT INTO accounts values(?,0)";
-        PreparedStatement statement = connection.prepareStatement(updateStatement);
-        statement.setString(1,id);
-        statement.execute();
-        statement.close();
-        connection.close();
-    }
-
-    */
 
 }
