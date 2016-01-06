@@ -1,20 +1,21 @@
 package Transactional;
 
 /**
- * Created by carlosmorais on 21/12/15.
+ * Created by carlosmorais on 05/01/16.
  */
 public class Resource {
-    private int xid;
-    private String sequenceXAR;
-    private int prepare;
 
-    public Resource(int xid, String sequenceXAR){
+    private int xid;
+    private String server;
+    private int prepare; //quando um server reneiciar, só precisa de saber este valor para saber o que fazer???
+
+    public Resource(int xid, String server){
         this.xid = xid;
-        this.sequenceXAR = sequenceXAR;
+        this.server = server;
     }
 
-    public String getSequenceXAR() {
-        return sequenceXAR;
+    public String getServer() {
+        return this.server;
     }
 
     public int getXid() {

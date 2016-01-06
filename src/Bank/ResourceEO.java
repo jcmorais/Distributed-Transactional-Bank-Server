@@ -12,17 +12,11 @@ import javax.transaction.xa.XAResource;
 //Resource Entity Object
 public class ResourceEO {
     private int xid;
-    private String idXAR;
     private XAResource xar;
 
-    public ResourceEO(int xid, String sequenceXAR, XAResource xar) {
+    public ResourceEO(int xid, XAResource xar) {
         this.xid = xid;
-        this.idXAR = idXAR;
         this.xar = xar;
-    }
-
-    public String getIdXAR() {
-        return idXAR;
     }
 
     public int getXid() {
