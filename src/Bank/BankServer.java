@@ -6,6 +6,7 @@ import org.apache.derby.jdbc.EmbeddedXADataSource;
 
 import javax.sql.XAConnection;
 import javax.transaction.xa.XAResource;
+import javax.transaction.xa.Xid;
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
@@ -22,69 +23,61 @@ import java.util.Scanner;
 
 public class BankServer extends UnicastRemoteObject implements RemoteBankServer{
     private int bankServerID;
+    private String myName;
     private BankDAO bankDAO;
-   // private XAConnection xac;
     private EmbeddedXADataSource ds;
-    XAResource xar;
-
     private ThredBankServerResources myResourses;
 
     public BankServer(int bankID) throws RemoteException, SQLException {
         super();
         this.bankDAO = new BankDAO();
         this.bankServerID = bankID;
+        this.myName = "myBank"+bankID;
         this.initXAConnection(bankID);
 
-        this.myResourses = new ThredBankServerResources();
+        this.myResourses = new ThredBankServerResources(this.myName);
         this.myResourses.start();
     }
 
 
     public void initXAConnection(int bankID){
         try {
-            //EmbeddedXADataSource ds = new EmbeddedXADataSource();
             ds = new EmbeddedXADataSource();
             this.bankDAO.GenerateDB(bankID, ds);
-            //this.xac = ds.getXAConnection();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
+
 
     /*
-    public String idGenerator() throws RemoteException {
-        //this.idGen++;
-        int idGen = 0;
-
-        try {
-            idGen = this.bankDAO.getNextIdGen(this.xac.getConnection());
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        //NAO FAZER ISTO ASSIM!!!
-        if (idGen < 10)
-            return new String(this.bankServerID + "000" + String.valueOf(idGen));
-        else if (idGen < 100)
-            return new String(this.bankServerID + "00" + String.valueOf(idGen));
-        if (idGen < 1000)
-            return new String(this.bankServerID + "0" + String.valueOf(idGen));
-        else
-            return new String(this.bankServerID + String.valueOf(idGen));
-    }
-
-*/
+    * só para TESTE!!!
+    * */
     @Override
     public void transfer(int xid, String idSource, String idDestiny, double amount) throws RemoteException {
         try {
+
             XAConnection xac = ds.getXAConnection();
-            Connection con = xac.getConnection();
             XAResource xar = xac.getXAResource();
-            MiniXid mxid = new MiniXid(xid);
+            Connection con = xac.getConnection();
+
+
+            Xid mxid = new MiniXid(xid);
             this.myResourses.addResouce(xid, xar);
             xar.start(mxid, XAResource.TMNOFLAGS);
-            this.bankDAO.transfer(con, idSource, idDestiny, amount);
-            xar.end(mxid, XAResource.TMSUCCESS);;
+            this.bankDAO.withdraw(con, idSource,  amount);
+            xar.end(mxid, XAResource.TMSUCCESS);
+
+            Connection con2 = xac.getConnection();
+            XAResource xar2 = xac.getXAResource();
+            Xid mxid2 = new MiniXid(xid);
+            this.myResourses.addResouce(xid, xar);
+            xar2.start(mxid2, XAResource.TMJOIN);
+            this.bankDAO.deposit(con2, idDestiny,  amount);
+            xar2.end(mxid, XAResource.TMSUCCESS);
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -96,11 +89,16 @@ public class BankServer extends UnicastRemoteObject implements RemoteBankServer{
             XAConnection xac = ds.getXAConnection();
             Connection con = xac.getConnection();
             XAResource xar = xac.getXAResource();
-            MiniXid mxid = new MiniXid(xid);
-            this.myResourses.addResouce(xid, xar);
-            xar.start(mxid, XAResource.TMNOFLAGS);
+            Xid mxid = new MiniXid(xid);
+            if(this.myResourses.hasXID(xid)){
+                xar.start(mxid, XAResource.TMJOIN);
+            }
+            else{
+                this.myResourses.addResouce(xid, xar);
+                xar.start(mxid, XAResource.TMNOFLAGS);
+            }
             this.bankDAO.deposit(con, idAccount, amount);
-            xar.end(mxid, XAResource.TMSUCCESS);;
+            xar.end(mxid, XAResource.TMSUCCESS);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -109,12 +107,18 @@ public class BankServer extends UnicastRemoteObject implements RemoteBankServer{
     @Override
     public void withdraw(int xid, String idAccount, double amount) throws RemoteException {
         try {
+
             XAConnection xac = ds.getXAConnection();
             Connection con = xac.getConnection();
             XAResource xar = xac.getXAResource();
-            MiniXid mxid = new MiniXid(xid);
-            this.myResourses.addResouce(xid, xar);
-            xar.start(mxid, XAResource.TMNOFLAGS);
+            Xid mxid = new MiniXid(xid);
+            if(this.myResourses.hasXID(xid)){
+                xar.start(mxid, XAResource.TMJOIN);
+            }
+            else{
+                this.myResourses.addResouce(xid, xar);
+                xar.start(mxid, XAResource.TMNOFLAGS);
+            }
             this.bankDAO.withdraw(con, idAccount, amount);
             xar.end(mxid, XAResource.TMSUCCESS);
         } catch (Exception e) {
