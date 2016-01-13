@@ -26,7 +26,7 @@ public class BankDAO {
             st.executeUpdate("DROP TABLE accounts");
             st.executeUpdate("DROP TABLE dbInfo");
         }
-        catch (SQLSyntaxErrorException sqle){ sqle.printStackTrace();}
+        catch (SQLSyntaxErrorException sqle){ }
 
         st.executeUpdate("create table accounts (id varchar(10) PRIMARY KEY, balance double)");
         st.executeUpdate("create table dbInfo(idGen int)");
@@ -41,6 +41,13 @@ public class BankDAO {
         }
         else
             st.executeUpdate("insert into dbInfo values (1000)");
+    }
+
+
+    public void LoadDB(int bankID, EmbeddedXADataSource ds) throws SQLException {
+        String dbName = DATABASE_NAME+bankID;
+        ds.setDatabaseName(dbName);
+        Statement st = ds.getConnection().createStatement();
     }
 
     public void transfer(Connection connection, String idS, String idD, double amount) throws SQLException, RemoteException {
@@ -70,6 +77,18 @@ public class BankDAO {
 
 
     public void withdraw(Connection connection, String id, double amount) throws SQLException, RemoteException {
+        /*
+        //sufficient amount?
+        String st = "SELECT balance FROM accounts WHERE id = ?";
+        PreparedStatement pst = connection.prepareStatement(st);
+        pst.setString(1,id);
+        double balance=0.0;
+        ResultSet rs = pst.executeQuery();
+        if(rs.next()){
+            balance = rs.getDouble(1);
+        }
+        if(balance<amount) throw new NoAmountException("saldo insuficiente");
+        */
         String updateStatement = "UPDATE accounts SET balance = balance - ? WHERE id = ? ";
         PreparedStatement statement = connection.prepareStatement(updateStatement);
         statement.setDouble(1,amount);
@@ -90,7 +109,7 @@ public class BankDAO {
         if(rs.next()){
             balance = rs.getDouble(1);
         }
-        //else exception??
+
         statement.close();
         connection.close();
         return balance;

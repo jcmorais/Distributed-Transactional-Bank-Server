@@ -12,6 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * Created by carlosmorais on 19/12/15.
  */
 public class Monitor2PC {
+
     public static class ChannelToResourse extends Thread{
         private ZMQ.Context context;
         private ZMQ.Socket socket;
@@ -27,20 +28,35 @@ public class Monitor2PC {
         public void run(){
             while(true){
                 byte[] b = socket.recv();
-                String sub = new String(b);
+                String sub = new String(b), reply="";
                 int xid=-1;
                 String[] tokens = sub.split("_");
-                System.out.println("reveives a SUB to Resource:"+sub);
+                log(sub);
                 String server="";
 
-                if(tokens.length>2) {
+                if(tokens.length>2){
                     xid = Integer.parseInt(tokens[1]);
                     server = tokens[2];
                 }
 
-                this.monitor.addResouce(xid, server);
-                socket.send("added bro!");
+                switch (tokens[0]){
+                    case "AddRes":
+                        this.monitor.addResouce(xid, server);
+                        reply = "added bro!"; //XD
+                        break;
+                    case "Recover":
+                        reply= this.monitor.recover(xid, server);
+                        break;
+                    default:
+                        break;
+                }
+
+                socket.send(reply);
             }
+        }
+
+        public void log(String s){
+            System.out.println(s);
         }
 
     }
@@ -80,14 +96,18 @@ public class Monitor2PC {
                 socket.send(reply);
             }
         }
+
+        public void log(String s){
+            System.out.println(s);
+        }
     }
 
 
     public static class ChannelCommitResource{
         private ZMQ.Context context;
         private ZMQ.Socket socketPUB;
-        //to receive the result of prepare() -> tenho de aranjar maneira de fazer isto de outra maniera (ou nao?)
         private ZMQ.Socket socketREP;
+        private final static int REQUEST_TIMEOUT = 5000;
 
         public ChannelCommitResource() {
             this.context = ZMQ.context(1);
@@ -99,39 +119,34 @@ public class Monitor2PC {
             this.socketREP.bind("tcp://*:55556");
         }
 
-        public int sendPrepare(String xar){
-            this.socketPUB.send("PREPARE_"+xar);
-
-            byte[] b = this.socketREP.recv();
-            this.socketREP.send("Thank's LOL");
-            return Integer.parseInt(new String(b));
-        }
-
-
         public int sendPrepare(Integer xid, String server){
             this.socketPUB.send(server+"_PREPARE_"+xid);
 
-            byte[] b = this.socketREP.recv();
-            this.socketREP.send("Thank's LOL");
-            return Integer.parseInt(new String(b));
-        }
+            ZMQ.PollItem items[] = {new ZMQ.PollItem(socketREP, ZMQ.Poller.POLLIN)};
+            int rc = ZMQ.poll(items, REQUEST_TIMEOUT);
 
-        public void sendCommit(String xar){
-            this.socketPUB.send("COMMIT_"+xar);
+            if (items[0].isReadable()) {
+                byte[] b = this.socketREP.recv();
+                this.socketREP.send("Thank's LOL");
+                return Integer.parseInt(new String(b));
+            }
+            else{
+                log("sem resposta do servidor");
+                return -1; //something wrong
+            }
         }
 
         public void sendCommit(Integer xid, String server){
             this.socketPUB.send(server+"_COMMIT_"+xid);
         }
 
-        public void sendRollBack(String xar){
-            this.socketPUB.send("ROLLBACK_"+xar);
-        }
-
         public void sendRollBack(Integer xid , String server){
             this.socketPUB.send(server+"_ROLLBACK_"+xid);
         }
 
+        public void log(String s){
+            System.out.println(s);
+        }
     }
 
 
@@ -168,33 +183,92 @@ public class Monitor2PC {
         public boolean commit(int xid) {
             synchronized (this.commitResource) {
                 boolean doCommit = true;
+
                 //phase1: preparare for all resources with the xid
                 for (Resource r : this.resources.get(xid)) {
-                    int res = this.commitResource.sendPrepare(xid, r.getServer());
-                    System.out.println("Prepare " + r.getServer() + " has result " + res);
-                    r.setPrepare(res);
-
-                    if (!((res == XAResource.XA_OK) || (res == XAResource.XA_RDONLY))) {
-                        doCommit = false; //if one prepare fail, don't do the commit!
+                    if(r.isRoolback()){
+                        doCommit = false;
+                    }
+                    else {
+                        int res = this.commitResource.sendPrepare(xid, r.getServer());
+                        log("Prepare " + r.getServer() + " has result " + res);
+                        r.setPrepare(res);
+                        if (!((res == XAResource.XA_OK) || (res == XAResource.XA_RDONLY))) {
+                            doCommit = false; //if one prepare fail, don't do the commit!
+                        }
                     }
                 }
+
+                /*
+                //teste YYYY
+                try {
+                    log("vou adormecer 25s");
+                    Thread.sleep(25000);
+                    log("acordei");
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                */
+
+                if(doCommit) log("doCommit "+xid);
+                else log("doRollback "+xid);
 
                 //phase2: commit or roolback for all resources with the xid
                 for (Resource r : this.resources.get(xid)) {
                     if (r.getPrepare() == XAResource.XA_OK) {
-                        System.out.println("phase2 to " + r.getServer());
-                        if (doCommit)
+                        log("phase2 to " + r.getServer());
+                        if (doCommit) {
+                            r.setCommit(true);
                             this.commitResource.sendCommit(xid, r.getServer());
-                        else
+                        }
+                        else {
                             this.commitResource.sendRollBack(xid, r.getServer());
+                            r.setRoolback(true);
+                        }
                     }
                 }
-
                 return doCommit;
             }
         }
-    }
 
+        public String recover(int xid, String server){
+            String res="";
+            boolean doRollback=false;
+
+            log("start recover for "+xid);
+            for (Resource r : this.resources.get(xid)) {
+                if (r.getServer().equals(server)){
+                    if(r.isRoolback()){
+                        res = "ROLLBACK";
+                    }
+                    else if(r.isCommit()){
+                        res = "COMMIT";
+                    }
+                    else if((r.getPrepare() == XAResource.XA_OK)) {
+                        res = "PREPARE";
+                    }
+                    else{
+                        res = "ROLLBACK";
+                        doRollback=true;
+                        log("Problem, the transaction with " +xid +" will be rollbacked");
+                    }
+                }
+            }
+
+            if(doRollback){
+                for (Resource r : this.resources.get(xid)) {
+                    r.setRoolback(true);
+                }
+            }
+
+            log("End recover for "+xid+" "+res);
+            return res;
+        }
+
+        public void log(String s){
+            System.out.println(s);
+        }
+    }
 
     public static void main(String[] args){
         Monitor monitor = new Monitor();

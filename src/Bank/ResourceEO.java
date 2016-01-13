@@ -27,11 +27,11 @@ public class ResourceEO {
         return xar;
     }
 
-
     public int prepare(){
         synchronized (xar) {
             try {
                 int res = this.xar.prepare(new MiniXid((this.xid)));
+                log(xid +" prepare");
                 return res;
             } catch (XAException e) {
                 e.printStackTrace();
@@ -44,6 +44,7 @@ public class ResourceEO {
         synchronized (xar) {
             try {
                 this.xar.commit(new MiniXid(this.xid), false);
+                log(xid +" commit");
             } catch (XAException e) {
                 e.printStackTrace();
             }
@@ -54,9 +55,14 @@ public class ResourceEO {
         synchronized (xar) {
             try {
                 this.xar.rollback(new MiniXid(this.xid));
+                log(xid +" rollback");
             } catch (XAException e) {
                 e.printStackTrace();
             }
         }
+    }
+
+    public void log(String s){
+        System.out.println(s);
     }
 }

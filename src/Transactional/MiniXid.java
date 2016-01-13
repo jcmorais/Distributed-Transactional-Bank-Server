@@ -6,10 +6,18 @@ package Transactional;
 import javax.transaction.xa.Xid;
 
 public class MiniXid implements Xid {
-    private String xid;
+    protected int formatId;
 
-    public MiniXid(int xid) {
-        this.xid = "txn"+(xid);
+    public MiniXid()
+    {
+    }
+    public MiniXid(int formatId )
+    {
+        this.formatId = formatId;
+    }
+    public int getFormatId()
+    {
+        return formatId;
     }
 
     public byte[] getBranchQualifier() {
@@ -17,12 +25,7 @@ public class MiniXid implements Xid {
     }
 
     @Override
-    public int getFormatId() {
-        return 0;
-    }
-
-    @Override
     public byte[] getGlobalTransactionId() {
-        return xid.getBytes();
+        return ("tx"+formatId).getBytes();
     }
 }

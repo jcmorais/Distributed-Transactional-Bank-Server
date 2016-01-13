@@ -1,7 +1,9 @@
 package Bank;
 
+import Transactional.MiniXid;
 import org.zeromq.ZMQ;
 
+import javax.transaction.xa.XAException;
 import javax.transaction.xa.XAResource;
 import java.util.HashMap;
 import java.util.Map;
@@ -34,13 +36,51 @@ public class ThredBankServerResources extends Thread{
         socketReqSub.connect("tcp://localhost:55556");
     }
 
-    //adds a new Resourse and send it to Transational Manager
-    public void addResouce(int xid, XAResource xar){
-        String req = "AddRes" + "_" + xid+"_"+this.myName, rep;
+    public void recover(int xid, XAResource xar){
+        //Monitor, what should I do for this xid?
+        String req = "Recover" + "_" + xid+"_"+this.myName, rep;
         socketReqResource.send(req);
         byte[] b =  socketReqResource.recv();
         rep = new String(b);
-        //if (rep != "added bro!") => problem ?!
+        log("recover "+xid+" = "+rep);
+
+        switch (rep){
+            case "ROLLBACK":
+                try {
+                    log("rollbacked"+xid);
+                    xar.rollback(new MiniXid(xid));
+                } catch (XAException e) {
+                    e.printStackTrace();
+                }
+                break;
+            case "COMMIT":
+                try {
+                    log("committed"+xid);
+                    xar.commit(new MiniXid(xid), false);
+                } catch (XAException e) {
+                    e.printStackTrace();
+                }
+                break;
+            case "PREPARE":
+                if(!this.myResources.containsKey(xid)){
+                    log("wait for commit or rollback"+xid);
+                    this.myResources.put(xid, new ResourceEO(xid, xar));
+                }
+                this.socketSUB.subscribe((this.myName+"_COMMIT_"+xid).getBytes()); //subscrive commit of the Resource
+                this.socketSUB.subscribe((this.myName+"_ROLLBACK_"+xid).getBytes()); //subscrive rollback of the Resource
+                break;
+            default: break;
+        }
+
+    }
+
+    //adds a new Resourse and send it to Transational Manager
+    public void addResouce(int xid, XAResource xar){
+        String req = "AddRes" + "_" + xid+"_"+this.myName, rep;
+        log("Thread: "+req);
+        socketReqResource.send(req);
+        byte[] b =  socketReqResource.recv();
+        rep = new String(b);
 
         if(!this.myResources.containsKey(xid)){
             this.myResources.put(xid, new ResourceEO(xid, xar));
@@ -49,7 +89,6 @@ public class ThredBankServerResources extends Thread{
         this.socketSUB.subscribe((this.myName+"_PREPARE_"+xid).getBytes()); //subscrive prepare of the Resource
         this.socketSUB.subscribe((this.myName+"_COMMIT_"+xid).getBytes()); //subscrive commit of the Resource
         this.socketSUB.subscribe((this.myName+"_ROLLBACK_"+xid).getBytes()); //subscrive rollback of the Resource
-        System.out.println(req);
     }
 
     public boolean hasXID(int xid){
@@ -84,6 +123,10 @@ public class ThredBankServerResources extends Thread{
                 }
             }
         }
+    }
+
+    public void log(String s){
+        System.out.println("Bank_Thread"+": "+s);
     }
 
 }

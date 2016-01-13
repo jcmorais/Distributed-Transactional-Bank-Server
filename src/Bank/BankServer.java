@@ -1,10 +1,12 @@
 package Bank;
 
+import Client.Channel2PC;
 import DataBase.BankDAO;
 import Transactional.MiniXid;
 import org.apache.derby.jdbc.EmbeddedXADataSource;
 
 import javax.sql.XAConnection;
+import javax.transaction.xa.XAException;
 import javax.transaction.xa.XAResource;
 import javax.transaction.xa.Xid;
 import java.net.MalformedURLException;
@@ -28,28 +30,28 @@ public class BankServer extends UnicastRemoteObject implements RemoteBankServer{
     private EmbeddedXADataSource ds;
     private ThredBankServerResources myResourses;
 
-    public BankServer(int bankID) throws RemoteException, SQLException {
+    public BankServer(int bankID, int load) throws RemoteException, SQLException {
         super();
         this.bankDAO = new BankDAO();
         this.bankServerID = bankID;
         this.myName = "myBank"+bankID;
-        this.initXAConnection(bankID);
-
+        this.initXAConnection(bankID, load);
         this.myResourses = new ThredBankServerResources(this.myName);
         this.myResourses.start();
     }
 
 
-    public void initXAConnection(int bankID){
+    public void initXAConnection(int bankID, int load){
         try {
             ds = new EmbeddedXADataSource();
-            this.bankDAO.GenerateDB(bankID, ds);
+            if (load == 1)
+                this.bankDAO.LoadDB(bankID, ds);
+            else
+                this.bankDAO.GenerateDB(bankID, ds);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
-
-
 
     /*
     * só para TESTE!!!
@@ -57,11 +59,9 @@ public class BankServer extends UnicastRemoteObject implements RemoteBankServer{
     @Override
     public void transfer(int xid, String idSource, String idDestiny, double amount) throws RemoteException {
         try {
-
             XAConnection xac = ds.getXAConnection();
             XAResource xar = xac.getXAResource();
             Connection con = xac.getConnection();
-
 
             Xid mxid = new MiniXid(xid);
             this.myResourses.addResouce(xid, xar);
@@ -76,7 +76,6 @@ public class BankServer extends UnicastRemoteObject implements RemoteBankServer{
             xar2.start(mxid2, XAResource.TMJOIN);
             this.bankDAO.deposit(con2, idDestiny,  amount);
             xar2.end(mxid, XAResource.TMSUCCESS);
-
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -97,8 +96,8 @@ public class BankServer extends UnicastRemoteObject implements RemoteBankServer{
                 this.myResourses.addResouce(xid, xar);
                 xar.start(mxid, XAResource.TMNOFLAGS);
             }
-            this.bankDAO.deposit(con, idAccount, amount);
-            xar.end(mxid, XAResource.TMSUCCESS);
+                this.bankDAO.deposit(con, idAccount, amount);
+                xar.end(mxid, XAResource.TMSUCCESS);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -107,7 +106,6 @@ public class BankServer extends UnicastRemoteObject implements RemoteBankServer{
     @Override
     public void withdraw(int xid, String idAccount, double amount) throws RemoteException {
         try {
-
             XAConnection xac = ds.getXAConnection();
             Connection con = xac.getConnection();
             XAResource xar = xac.getXAResource();
@@ -121,6 +119,7 @@ public class BankServer extends UnicastRemoteObject implements RemoteBankServer{
             }
             this.bankDAO.withdraw(con, idAccount, amount);
             xar.end(mxid, XAResource.TMSUCCESS);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -148,18 +147,66 @@ public class BankServer extends UnicastRemoteObject implements RemoteBankServer{
             return this.bankDAO.getBalance(xac.getConnection(),idAccount);
         } catch (SQLException e) {
             e.printStackTrace();
+            return -1.0;
         }
-        return -1.0; //something wrong?
+    }
+
+    public void recover(){
+        try {
+            XAResource xar = ds.getXAConnection().getXAResource();
+            Xid[] xid = xar.recover(XAResource.TMSTARTRSCAN);
+
+            for(Xid aux: xid){
+                //LOCKS !!!
+                log("Try recover xid = "+aux.getFormatId());
+                this.myResourses.recover(aux.getFormatId(), xar);
+            }
+        } catch (XAException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 
+
     public static void main(String[] args) throws RemoteException, SQLException, MalformedURLException {
-        Scanner in = new Scanner(System.in);
-        System.out.println("Qual o identificador do Servidor a arrancar?");
-        int id = in.nextInt();
-        BankServer bankServer = new BankServer(id);
-        Naming.rebind("myBank"+id, bankServer);
-        System.out.println("BankServer"+id+" start");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("How star the Server?\n- start \"id\"\n- load \"id\"\n- recover \"id\"");
+        String read = scanner.nextLine();
+        String[] tokens = read.split(" ");
+
+        int id = Integer.parseInt(tokens[1]);
+        BankServer bankServer;
+        Channel2PC channelMonitor = new Channel2PC();
+
+        switch (tokens[0]){
+            case "start": {
+                bankServer = new BankServer(id, 0);
+                Naming.rebind("myBank" + id, bankServer);
+                bankServer.log("BankServer"+id+" start");
+                break;
+            }
+            case  "load": {
+                bankServer = new BankServer(id, 1);
+                Naming.rebind("myBank" + id, bankServer);
+                bankServer.log("BankServer"+id+" load");
+                break;
+            }
+            case "recover": {
+                bankServer = new BankServer(id, 1);
+                bankServer.log("Start Recover");
+                bankServer.recover();
+                bankServer.log("End Recover");
+                Naming.rebind("myBank" + id, bankServer);
+                bankServer.log("BankServer"+id+" load");
+                break;
+            }
+        }
+    }
+
+    public void log(String s){
+        System.out.println("Bank: " + s);
     }
 
 }

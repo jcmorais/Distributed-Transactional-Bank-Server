@@ -16,11 +16,23 @@ public class Client {
     public static class BankClient{
         public void transfer ( int xid, String idSource, String idDestiny,double amount){
         try {
+
             RemoteBankServer bankS = (RemoteBankServer) Naming.lookup("//localhost/myBank" + idSource.substring(0, 3));
             RemoteBankServer bankD = (RemoteBankServer) Naming.lookup("//localhost/myBank" + idDestiny.substring(0, 3));
 
             bankD.deposit(xid, idDestiny, amount);
             bankS.withdraw(xid, idSource, amount);
+
+            /*
+            //teste XXXX
+            try {
+                System.out.println("vou adormecer esperar 25s");
+                Thread.sleep(25000);
+                System.out.println("acordei!!!");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            */
 
         } catch (NotBoundException e) {
             e.printStackTrace();
@@ -38,8 +50,17 @@ public class Client {
                 RemoteBankServer bank1 = (RemoteBankServer) Naming.lookup("//localhost/myBank100");
                 RemoteBankServer bank2 = (RemoteBankServer) Naming.lookup("//localhost/myBank101");
 
-                res.append( bank1.getAllAccounts()+"\n");
-                res.append( bank2.getAllAccounts()+"\n");
+                try {
+                    res.append(bank1.getAllAccounts() + "\n");
+                }
+                catch (Exception e ) { }
+
+                try {
+                    res.append(bank2.getAllAccounts() + "\n");
+                }
+                catch (Exception e ) { }
+
+
             } catch (NotBoundException e) {
                 e.printStackTrace();
             } catch (MalformedURLException e) {
