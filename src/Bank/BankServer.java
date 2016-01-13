@@ -53,35 +53,6 @@ public class BankServer extends UnicastRemoteObject implements RemoteBankServer{
         }
     }
 
-    /*
-    * só para TESTE!!!
-    * */
-    @Override
-    public void transfer(int xid, String idSource, String idDestiny, double amount) throws RemoteException {
-        try {
-            XAConnection xac = ds.getXAConnection();
-            XAResource xar = xac.getXAResource();
-            Connection con = xac.getConnection();
-
-            Xid mxid = new MiniXid(xid);
-            this.myResourses.addResouce(xid, xar);
-            xar.start(mxid, XAResource.TMNOFLAGS);
-            this.bankDAO.withdraw(con, idSource,  amount);
-            xar.end(mxid, XAResource.TMSUCCESS);
-
-            Connection con2 = xac.getConnection();
-            XAResource xar2 = xac.getXAResource();
-            Xid mxid2 = new MiniXid(xid);
-            this.myResourses.addResouce(xid, xar);
-            xar2.start(mxid2, XAResource.TMJOIN);
-            this.bankDAO.deposit(con2, idDestiny,  amount);
-            xar2.end(mxid, XAResource.TMSUCCESS);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     @Override
     public void deposit(int xid, String idAccount, double amount) throws RemoteException {
         try {
@@ -105,6 +76,17 @@ public class BankServer extends UnicastRemoteObject implements RemoteBankServer{
 
     @Override
     public void withdraw(int xid, String idAccount, double amount) throws RemoteException {
+        /*
+        //TesteA Servidor falha operação e ainda não pediu para adicionar o Recurso
+        try {
+            log("vou adormecer 10s");
+            Thread.sleep(10000);
+            log("acordei");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        */
+
         try {
             XAConnection xac = ds.getXAConnection();
             Connection con = xac.getConnection();

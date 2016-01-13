@@ -16,7 +16,6 @@ import java.rmi.RemoteException;
 
 public class TransferTest1 extends TestCase {
     Channel2PC channelMonitor = new Channel2PC();
-    //RemoteBank bank;
 
     @Test
     public void teste1() throws MalformedURLException, NotBoundException, RemoteException {
@@ -39,7 +38,9 @@ public class TransferTest1 extends TestCase {
     public void transfer ( int xid, String idSource, String idDestiny,double amount){
         try {
             RemoteBankServer bankS = (RemoteBankServer) Naming.lookup("//localhost/myBank" + idSource.substring(0, 3));
+            channelMonitor.sendMessage("AddServer_"+xid+"_"+"myBank"+idSource.substring(0, 3));
             RemoteBankServer bankD = (RemoteBankServer) Naming.lookup("//localhost/myBank" + idDestiny.substring(0, 3));
+            channelMonitor.sendMessage("AddServer_"+xid+"_"+"myBank"+idDestiny.substring(0, 3));
 
             bankD.deposit(xid, idDestiny, amount);
             bankS.withdraw(xid, idSource, amount);

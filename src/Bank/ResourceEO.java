@@ -41,6 +41,16 @@ public class ResourceEO {
     }
 
     public void commit(){
+        /*
+        //TesteD BankServer falha antes de fazer commit/rollback
+        try {
+            System.out.println("vou dormir 10s");
+            Thread.sleep(10000);
+            System.out.println("acordei");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        */
         synchronized (xar) {
             try {
                 this.xar.commit(new MiniXid(this.xid), false);
