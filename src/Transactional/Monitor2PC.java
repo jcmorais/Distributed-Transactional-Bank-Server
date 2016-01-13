@@ -3,9 +3,7 @@ package Transactional;
 import org.zeromq.ZMQ;
 
 import javax.transaction.xa.XAResource;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -61,12 +59,12 @@ public class Monitor2PC {
 
     }
 
-    public static class ChannelToClient extends Thread{
+    public static class ChannelClient extends Thread{
         private ZMQ.Context context;
         private ZMQ.Socket socket;
         Monitor monitor;
 
-        public ChannelToClient(Monitor monitor){
+        public ChannelClient(Monitor monitor){
             this.context = ZMQ.context(1);
             this.socket = context.socket(ZMQ.REP);
             socket.bind("tcp://*:88888");
@@ -83,7 +81,7 @@ public class Monitor2PC {
                     int xid = this.monitor.begin();
                     reply = String.valueOf(xid);
                 }
-                if(req.length() > 5 && req.substring(0,6).equals("COMMIT")) {
+                else if(req.length() > 5 && req.substring(0,6).equals("COMMIT")) {
                     String[] tokens = req.split("_");
                     int xid = Integer.parseInt(tokens[1]);
 
@@ -93,6 +91,16 @@ public class Monitor2PC {
                     else
                         reply = "false";
                 }
+                else {
+                    String[] tokens = req.split("_");
+                    if(tokens[0].equals("AddServer") && tokens.length==3) {
+                        int xid = Integer.parseInt(tokens[1]);
+                        String server = tokens[2];
+                        log("Add_Server " + xid + " " + server);
+                        this.monitor.addServerToXID(xid, server);
+                    }
+                }
+
                 socket.send(reply);
             }
         }
@@ -103,13 +111,13 @@ public class Monitor2PC {
     }
 
 
-    public static class ChannelCommitResource{
+    public static class ChannelBankServer{
         private ZMQ.Context context;
         private ZMQ.Socket socketPUB;
         private ZMQ.Socket socketREP;
         private final static int REQUEST_TIMEOUT = 5000;
 
-        public ChannelCommitResource() {
+        public ChannelBankServer() {
             this.context = ZMQ.context(1);
 
             this.socketPUB = context.socket(ZMQ.PUB);
@@ -118,6 +126,7 @@ public class Monitor2PC {
             this.socketREP = context.socket(ZMQ.REP);
             this.socketREP.bind("tcp://*:55556");
         }
+
 
         public int sendPrepare(Integer xid, String server){
             this.socketPUB.send(server+"_PREPARE_"+xid);
@@ -153,12 +162,19 @@ public class Monitor2PC {
     public static class Monitor {
         private Map<Integer, List<Resource>> resources;
         private int xid;
-        private ChannelCommitResource commitResource;
+        private ChannelBankServer commitResource;
+
+        /*
+        * If a BankServer fail, but not add your resource, the monitor needs to know
+        * that a server not added their resource and do rollback
+        * */
+        private Map<Integer, Set<String>> totalServers; //
 
         public Monitor() {
             this.resources = new ConcurrentHashMap<Integer, List<Resource>>();
+            this.totalServers = new ConcurrentHashMap<Integer, Set<String>>();
             this.xid = 1;
-            this.commitResource = new ChannelCommitResource();
+            this.commitResource = new ChannelBankServer();
         }
 
         //add a new Resource to XID
@@ -177,6 +193,7 @@ public class Monitor2PC {
 
         public int begin() {
             this.resources.put(this.xid, new ArrayList<Resource>());
+            this.totalServers.put(this.xid, new HashSet<String>());
             return this.xid++;
         }
 
@@ -200,15 +217,20 @@ public class Monitor2PC {
                 }
 
                 /*
-                //teste YYYY
+                //testeC BankServer falha depois do prepare
                 try {
-                    log("vou adormecer 25s");
-                    Thread.sleep(25000);
+                    log("vou adormecer 20s");
+                    Thread.sleep(20000);
                     log("acordei");
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
                 */
+
+                if((doCommit) && (this.totalServers.get(xid).size() != this.resources.get(xid).size() )){
+                    doCommit = false;
+                    log("not all servers added your resources");
+                }
 
                 if(doCommit) log("doCommit "+xid);
                 else log("doRollback "+xid);
@@ -265,6 +287,10 @@ public class Monitor2PC {
             return res;
         }
 
+        public void addServerToXID(int xid, String server){
+            this.totalServers.get(xid).add(server);
+        }
+
         public void log(String s){
             System.out.println(s);
         }
@@ -272,7 +298,7 @@ public class Monitor2PC {
 
     public static void main(String[] args){
         Monitor monitor = new Monitor();
-        new ChannelToClient(monitor).start();
+        new ChannelClient(monitor).start();
         new ChannelToResourse(monitor).start();
         while(true);
     }

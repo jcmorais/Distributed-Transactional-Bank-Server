@@ -38,4 +38,9 @@ public class Channel2PC {
         else
             return false;
     }
+
+    public void sendMessage(String m){
+        socket.send(m);
+        socket.recv();
+    }
 }

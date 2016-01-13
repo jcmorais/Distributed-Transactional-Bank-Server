@@ -14,17 +14,27 @@ import java.util.Scanner;
 public class Client {
 
     public static class BankClient{
+        private static final String bankPrefix = "myBank";
+        private static final String bankHost = "//localhost/";
+        private Channel2PC monitor;
+
+        public BankClient(Channel2PC monitor){
+            this.monitor = monitor;
+        }
+
         public void transfer ( int xid, String idSource, String idDestiny,double amount){
         try {
-
-            RemoteBankServer bankS = (RemoteBankServer) Naming.lookup("//localhost/myBank" + idSource.substring(0, 3));
-            RemoteBankServer bankD = (RemoteBankServer) Naming.lookup("//localhost/myBank" + idDestiny.substring(0, 3));
+            String serverS =  bankPrefix + idSource.substring(0, 3), serverD = bankPrefix + idDestiny.substring(0, 3);
+            RemoteBankServer bankS = (RemoteBankServer) Naming.lookup(bankHost+serverS);
+            this.monitor.sendMessage("AddServer_"+xid+"_"+serverS);
+            RemoteBankServer bankD = (RemoteBankServer) Naming.lookup(bankHost+serverD);
+            this.monitor.sendMessage("AddServer_"+xid+"_"+serverD);
 
             bankD.deposit(xid, idDestiny, amount);
             bankS.withdraw(xid, idSource, amount);
 
             /*
-            //teste XXXX
+            //testeB BankServer falha antes do prepare
             try {
                 System.out.println("vou adormecer esperar 25s");
                 Thread.sleep(25000);
@@ -35,13 +45,8 @@ public class Client {
             */
 
         } catch (NotBoundException e) {
-            e.printStackTrace();
         } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (RemoteException e) {
-            e.printStackTrace();
-
-        }
+        } catch (RemoteException e) { }
         }
         public String listAllAccounts() throws RemoteException {
             StringBuilder res = new StringBuilder();
@@ -80,7 +85,7 @@ public class Client {
         Scanner scanner = new Scanner(System.in);
         String opt;
         boolean end = false;
-        BankClient bank = new BankClient();
+        BankClient bank = new BankClient(channelMonitor);
         System.out.println(bank.listAllAccounts());
 
         while(!end) {
