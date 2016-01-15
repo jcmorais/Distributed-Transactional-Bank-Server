@@ -86,7 +86,7 @@ public class Client {
         String opt;
         boolean end = false;
         BankClient bank = new BankClient(channelMonitor);
-        System.out.println(bank.listAllAccounts());
+        //System.out.println(bank.listAllAccounts());
 
         while(!end) {
             System.out.println("------------------------------\n1 - Nova Transferência\n2 - Sair\n------------------------------");
@@ -106,7 +106,7 @@ public class Client {
                     boolean res = channelMonitor.commit(xid);
                     if (res) System.out.println("Transferência bem-sucedida.");
                     else System.out.println("Transferência mal-sucedida.");
-                    System.out.println(bank.listAllAccounts());
+                    //System.out.println(bank.listAllAccounts());
                     break;
                 case "2":
                     end = true;

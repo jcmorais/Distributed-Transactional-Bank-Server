@@ -77,18 +77,6 @@ public class BankDAO {
 
 
     public void withdraw(Connection connection, String id, double amount) throws SQLException, RemoteException {
-        /*
-        //sufficient amount?
-        String st = "SELECT balance FROM accounts WHERE id = ?";
-        PreparedStatement pst = connection.prepareStatement(st);
-        pst.setString(1,id);
-        double balance=0.0;
-        ResultSet rs = pst.executeQuery();
-        if(rs.next()){
-            balance = rs.getDouble(1);
-        }
-        if(balance<amount) throw new NoAmountException("saldo insuficiente");
-        */
         String updateStatement = "UPDATE accounts SET balance = balance - ? WHERE id = ? ";
         PreparedStatement statement = connection.prepareStatement(updateStatement);
         statement.setDouble(1,amount);
