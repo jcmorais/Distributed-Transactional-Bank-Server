@@ -5,8 +5,8 @@ import org.zeromq.ZMQ;
 
 import javax.transaction.xa.XAException;
 import javax.transaction.xa.XAResource;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created by carlosmorais on 21/12/15.
@@ -23,7 +23,7 @@ public class ThredBankServerResources extends Thread{
     public ThredBankServerResources(String myName){
         this.myName = myName;
 
-        this.myResources = new HashMap<Integer, ResourceEO>();
+        this.myResources = new ConcurrentHashMap<Integer, ResourceEO>();
         this.context = ZMQ.context(1);
 
         this.socketReqResource = context.socket(ZMQ.REQ);
@@ -36,7 +36,7 @@ public class ThredBankServerResources extends Thread{
         socketReqSub.connect("tcp://localhost:55556");
     }
 
-    public void recover(int xid, XAResource xar){
+    public synchronized void recover(int xid, XAResource xar){
         //Monitor, what should I do for this xid?
         String req = "Recover" + "_" + xid+"_"+this.myName, rep;
         socketReqResource.send(req);
@@ -75,11 +75,11 @@ public class ThredBankServerResources extends Thread{
     }
 
     //adds a new Resourse and send it to Transational Manager
-    public void addResouce(int xid, XAResource xar){
+    public synchronized void addResouce(int xid, XAResource xar){
         String req = "AddRes" + "_" + xid+"_"+this.myName, rep;
         log("Thread: "+req);
         socketReqResource.send(req);
-        byte[] b =  socketReqResource.recv();
+        byte[] b =  socketReqResource.recv(0);
         rep = new String(b);
 
         if(!this.myResources.containsKey(xid)){

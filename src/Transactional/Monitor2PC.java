@@ -115,7 +115,7 @@ public class Monitor2PC {
         private ZMQ.Context context;
         private ZMQ.Socket socketPUB;
         private ZMQ.Socket socketREP;
-        private final static int REQUEST_TIMEOUT = 5000;
+        private final static int REQUEST_TIMEOUT = 1500;
 
         public ChannelBankServer() {
             this.context = ZMQ.context(1);
@@ -163,11 +163,8 @@ public class Monitor2PC {
         private Map<Integer, List<Resource>> resources;
         private int xid;
         private ChannelBankServer commitResource;
-
-        /*
-        * If a BankServer fail, but not add your resource, the monitor needs to know
-        * that a server not added their resource and do rollback
-        * */
+        /* If a BankServer fail, but not add your resource, the monitor needs to know
+        that a server not added their resource and do rollback */
         private Map<Integer, Set<String>> totalServers; //
 
         public Monitor() {
@@ -178,7 +175,7 @@ public class Monitor2PC {
         }
 
         //add a new Resource to XID
-        public void addResouce(int xid, String server) {
+        public synchronized void addResouce(int xid, String server) {
             Resource sr = new Resource(xid, server);
             boolean flag = true;
 
@@ -191,7 +188,7 @@ public class Monitor2PC {
             }
         }
 
-        public int begin() {
+        public synchronized int begin() {
             this.resources.put(this.xid, new ArrayList<Resource>());
             this.totalServers.put(this.xid, new HashSet<String>());
             return this.xid++;
@@ -287,7 +284,7 @@ public class Monitor2PC {
             return res;
         }
 
-        public void addServerToXID(int xid, String server){
+        public synchronized void addServerToXID(int xid, String server){
             this.totalServers.get(xid).add(server);
         }
 

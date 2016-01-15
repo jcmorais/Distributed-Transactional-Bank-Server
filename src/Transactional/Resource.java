@@ -1,15 +1,17 @@
 package Transactional;
 
+import java.util.concurrent.locks.ReentrantLock;
+
 /**
  * Created by carlosmorais on 05/01/16.
  */
-public class Resource {
-
+public  class Resource {
     private int xid;
     private String server;
     private int prepare;
     private boolean roolback;
     private boolean commit;
+    private ReentrantLock lock;
 
     public Resource(int xid, String server){
         this.xid = xid;
@@ -17,13 +19,12 @@ public class Resource {
         this.roolback = false;
         this.commit = false;
         this.prepare=-1;
+        this.lock =  new ReentrantLock();
     }
 
-    public boolean isRoolback() {
-        return roolback;
-    }
+    public boolean isRoolback() { return roolback; }
 
-    public void setRoolback(boolean roolback) {
+    public synchronized void setRoolback(boolean roolback) {
         this.roolback = roolback;
     }
 
@@ -31,7 +32,7 @@ public class Resource {
         return commit;
     }
 
-    public void setCommit(boolean commit) {
+    public synchronized void setCommit(boolean commit) {
         this.commit = commit;
     }
 
@@ -45,6 +46,6 @@ public class Resource {
 
     public int getPrepare(){ return this.prepare; }
 
-    public void setPrepare(int prepare){ this.prepare = prepare; }
+    public synchronized void setPrepare(int prepare){ this.prepare = prepare; }
 
 }

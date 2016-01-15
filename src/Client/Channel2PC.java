@@ -21,14 +21,14 @@ public class Channel2PC {
         socket.connect("tcp://localhost:88888");
     }
 
-    public int begin(){
+    public synchronized int begin(){
         String request = "BEGIN";
         socket.send(request); //send a request to start a new Transaction
         byte[] b = socket.recv(); //receives a XID of the requested transaction
         return Integer.parseInt(new String(b));
     }
 
-    public boolean commit(int xid){
+    public synchronized boolean commit(int xid){
         String request = "COMMIT"+"_"+xid;
         socket.send(request); //send a request to commit the transaction xid
         byte[] b = socket.recv();
@@ -39,7 +39,7 @@ public class Channel2PC {
             return false;
     }
 
-    public void sendMessage(String m){
+    public synchronized void sendMessage(String m){
         socket.send(m);
         socket.recv();
     }
