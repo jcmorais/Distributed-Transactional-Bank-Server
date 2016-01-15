@@ -17,6 +17,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Scanner;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * Created by carlosmorais on 21/12/15.
@@ -29,6 +30,8 @@ public class BankServer extends UnicastRemoteObject implements RemoteBankServer{
     private BankDAO bankDAO;
     private EmbeddedXADataSource ds;
     private ThredBankServerResources myResourses;
+    private int lastXID;
+    private ReentrantLock lock;
 
     public BankServer(int bankID, int load) throws RemoteException, SQLException {
         super();
@@ -38,6 +41,8 @@ public class BankServer extends UnicastRemoteObject implements RemoteBankServer{
         this.initXAConnection(bankID, load);
         this.myResourses = new ThredBankServerResources(this.myName);
         this.myResourses.start();
+        this.lastXID=0;
+        this.lock = new ReentrantLock();
     }
 
 
@@ -54,12 +59,18 @@ public class BankServer extends UnicastRemoteObject implements RemoteBankServer{
     }
 
     @Override
-    public void deposit(int xid, String idAccount, double amount) throws RemoteException {
+    public  void deposit(int xid, String idAccount, double amount) throws RemoteException {
         try {
             XAConnection xac = ds.getXAConnection();
             Connection con = xac.getConnection();
-            XAResource xar = xac.getXAResource();
             Xid mxid = new MiniXid(xid);
+            XAResource xar = xac.getXAResource();
+            lock.lock();
+            try{
+                if(xid < this.lastXID) {
+                    return;
+                }
+                this.lastXID = xid;
             if(this.myResourses.hasXID(xid)){
                 xar.start(mxid, XAResource.TMJOIN);
             }
@@ -67,15 +78,19 @@ public class BankServer extends UnicastRemoteObject implements RemoteBankServer{
                 this.myResourses.addResouce(xid, xar);
                 xar.start(mxid, XAResource.TMNOFLAGS);
             }
-                this.bankDAO.deposit(con, idAccount, amount);
-                xar.end(mxid, XAResource.TMSUCCESS);
+            this.bankDAO.deposit(con, idAccount, amount);
+            xar.end(mxid, XAResource.TMSUCCESS);
+            }
+            finally {
+                lock.unlock();
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     @Override
-    public void withdraw(int xid, String idAccount, double amount) throws RemoteException {
+    public  void withdraw(int xid, String idAccount, double amount) throws RemoteException {
         /*
         //TesteA Servidor falha operação e ainda não pediu para adicionar o Recurso
         try {
@@ -86,12 +101,17 @@ public class BankServer extends UnicastRemoteObject implements RemoteBankServer{
             e.printStackTrace();
         }
         */
-
         try {
             XAConnection xac = ds.getXAConnection();
             Connection con = xac.getConnection();
-            XAResource xar = xac.getXAResource();
             Xid mxid = new MiniXid(xid);
+            XAResource xar = xac.getXAResource();
+            lock.lock();
+            try{
+                if(xid < this.lastXID) {
+                    return;
+                }
+                this.lastXID = xid;
             if(this.myResourses.hasXID(xid)){
                 xar.start(mxid, XAResource.TMJOIN);
             }
@@ -101,6 +121,10 @@ public class BankServer extends UnicastRemoteObject implements RemoteBankServer{
             }
             this.bankDAO.withdraw(con, idAccount, amount);
             xar.end(mxid, XAResource.TMSUCCESS);
+            }
+            finally {
+                lock.unlock();
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -139,7 +163,6 @@ public class BankServer extends UnicastRemoteObject implements RemoteBankServer{
             Xid[] xid = xar.recover(XAResource.TMSTARTRSCAN);
 
             for(Xid aux: xid){
-                //LOCKS !!!
                 log("Try recover xid = "+aux.getFormatId());
                 this.myResourses.recover(aux.getFormatId(), xar);
             }
@@ -154,13 +177,30 @@ public class BankServer extends UnicastRemoteObject implements RemoteBankServer{
 
     public static void main(String[] args) throws RemoteException, SQLException, MalformedURLException {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("How star the Server?\n- start \"id\"\n- load \"id\"\n- recover \"id\"");
-        String read = scanner.nextLine();
-        String[] tokens = read.split(" ");
-
-        int id = Integer.parseInt(tokens[1]);
         BankServer bankServer;
         Channel2PC channelMonitor = new Channel2PC();
+        boolean flag = true;
+        String[] tokens = new String[0];
+        String read;
+        int id = 0;
+
+        while(flag){
+            System.out.println("How star the Server?\n- start \"id\"\n- load \"id\"\n- recover \"id\"");
+            read = scanner.nextLine();
+            tokens = read.split(" ");
+
+            if(tokens.length >= 2) {
+                try {
+                    id = Integer.parseInt(tokens[1]);
+                    flag = false;
+                } catch (NumberFormatException e) {
+                    System.out.println("not a INT...");
+                }
+            }
+            else
+                System.out.println("wrong...");
+        }
+
 
         switch (tokens[0]){
             case "start": {
